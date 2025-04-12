@@ -188,6 +188,10 @@
     transition: 0.3s;
 }
 
+    .tech-carousel .item{
+        padding: 10px 0px;
+    }
+
 .thm-btn:hover {
     background-color: #cc5200;
 }
@@ -357,9 +361,20 @@
 </section>
 <!-- choosing reason end -->
 
-<section class="container tech my-4">    
+{{-- <section class="container tech my-4 p-3">    
     <h2 class="text-center">Our Technology</h2>
-</section>
+
+    <div class="tech-carousel owl-carousel owl-theme mt-3">
+        <div class="item"><img src="icons/html.png" alt="HTML"></div>
+        <div class="item"><img src="icons/css.png" alt="CSS"></div>
+        <div class="item"><img src="icons/js.png" alt="JavaScript"></div>
+        <div class="item"><img src="icons/python.png" alt="Python"></div>
+        <div class="item"><img src="icons/php.png" alt="PHP"></div>
+        <div class="item"><img src="icons/laravel.png" alt="Laravel"></div>
+        <div class="item"><img src="icons/nextjs.png" alt="Next.js"></div>
+        <div class="item"><img src="icons/flutter.png" alt="Flutter"></div>
+      </div>
+</section> --}}
 
 
 <!-- about-details begin -->
@@ -481,6 +496,28 @@
         });
         
     });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(".tech-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 2000, // Continuous loop without pause
+            autoplaySpeed: 2500, // Controls transition smoothness
+            smartSpeed: 2500,
+            dots: false,
+            nav: false,
+            slideTransition: 'linear',
+            responsive: {
+                0: { items: 3 },
+                600: { items: 5 },
+                1000: { items: 7 }
+            }
+        });
+
+    })
 </script>
 
 <script>
