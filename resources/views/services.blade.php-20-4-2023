@@ -1,0 +1,8 @@
+
+@extends('layouts.frontend_default')
+@section('title', 'About Us')
+@section('content')
+
+<h1>Services</h1>
+
+@endsection

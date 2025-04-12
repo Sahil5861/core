@@ -1,0 +1,15 @@
+label.error {
+    color: red;
+}
+
+/*.table-responsive {
+    overflow-x: auto !important;
+}*/
+
+#multi-column-ordering_wrapper > .row .col-sm-12{
+     overflow-x: auto !important;
+}
+
+.table > tbody > tr > td {
+    border: 1px solid #ebedf2 !important;
+}
