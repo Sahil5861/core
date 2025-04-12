@@ -29,23 +29,31 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item dropdown {{ request()->is('/') ? 'active' : '' }}">
-                                        <a class="nav-link dropdown-toggle" href="https://html.themexriver.com/murtes/murtes/about.html#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Home
-                                        </a>
+                                        <a class="nav-link dropdown-toggle" href="https://html.themexriver.com/murtes/murtes/about.html#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                        <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/index.html">Home One</a>
-                                        <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/index-2.html">Home Two</a>
-                                        <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/index-3.html">Home Three</a>
-                                        <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/index-4.html">Home Four</a>
-                                        <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/index-5.html">Home Five</a>
+                                            <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/index.html">Home One</a>
+                                            <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/index-2.html">Home Two</a>
+                                            <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/index-3.html">Home Three</a>
+                                            <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/index-4.html">Home Four</a>
+                                            <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/index-5.html">Home Five</a>
                                         </div>
                                     </li>
                                     <li class="nav-item {{ request()->routeIs('about-us') ? 'active' : '' }}">
                                         <a class="nav-link" href="{{route('about-us')}}">About</a>
                                     </li>                                        
 
-                                    <li class="nav-item {{ request()->routeIs('services') ? 'active' : '' }}">
-                                        <a class="nav-link" href="{{route('services')}}">Service</a>
+                                    <li class="nav-item dropdown {{ request()->routeIs('services') ? 'active' : '' }}">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Service</a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown3" style="width: 300px;">
+                                            <a class="dropdown-item" href="#" style="width: 100%;">Android App Development</a>
+                                            <a class="dropdown-item" href="#" style="width: 100%;">Hybrid App Development</a>
+                                            <a class="dropdown-item" href="#" style="width: 100%;">Web Development</a>
+                                            <a class="dropdown-item" href="#" style="width: 100%;">TV App Development</a>
+                                            <a class="dropdown-item" href="#" style="width: 100%;">Cloud Solution Service</a>
+                                            <a class="dropdown-item" href="#" style="width: 100%;">iOS App Development</a>
+                                            <a class="dropdown-item" href="#" style="width: 100%;">UI/UX Design</a>
+                                            <a class="dropdown-item" href="#" style="width: 100%;">DevOps Service</a>
+                                        </div>                                        
                                     </li>
 
                                     <li class="nav-item">

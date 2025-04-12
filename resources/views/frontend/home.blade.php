@@ -188,6 +188,13 @@
       vertical-align: baseline;
     }
 
+    .banner-btn{
+        position: absolute;
+        bottom: 20px;
+        left: 20px;     
+    }
+
+
       .fade-in {
         display: inline-block;
         opacity: 0;
@@ -221,6 +228,7 @@
       }
     }
 
+    
         
 
     
@@ -260,13 +268,17 @@
   
     <div class="banner-content2">      
       <div class="typewriter-container">
-        <p>"Turning Ideas Into Digital Realities"</p>
-        <h1 class="static-text">Custom IT Solutions</h1>
-        <h1 class="static-text">For</h1>
+        <h4>"Turning Ideas Into Digital Realities"</h4>
+        <h1 class="static-text">Custom IT Solutions For</h1>        
         <h1 class="typewriter-text" id="typewriter"></h1>
-      </div>      
+      </div>              
     </div>
-  </div>
+    <div class="buttons banner-btn">
+        <a href="#"class="banner-button btn-murtes">Explor more <i class="fas fa-long-arrow-alt-right"></i></a>                        
+    </div>
+</div>
+
+
   
 
 
@@ -347,7 +359,7 @@
             </div>
             <div class="col-xl-5 col-lg-5">
                 <div class="part-img">
-                    <img class="main-img aos-init aos-animate"
+                    {{-- <img class="main-img aos-init aos-animate"
                         src="{{asset('images/about-3.jpg')}}" alt=""
                         data-aos="fade" data-aos-offset="300" data-aos-duration="1000"
                         data-aos-easing="ease-in-sine">
@@ -356,7 +368,9 @@
                         alt="" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1200"
                         data-aos-easing="ease-in-sine">
                     <a href="https://www.youtube.com/watch?v=NU9Qyic_mX0" class="play-button mfp-iframe"><i
-                            class="fa fa-play"></i></a>
+                            class="fa fa-play"></i></a> --}}
+
+                        <img src="{{asset('images/img.gif')}}" alt="" class="main-img aos-animate">
                 </div>
             </div>
         </div>
@@ -440,7 +454,7 @@
                         <div class="card-content">
                             <h3>{{$item->title}}</h3>
                             <p>{{$item->description}}</p>
-                            <a href="#" class="details">details →</a>
+                            <a href="{{route('service.details', $item->id)}}" class="details">details →</a>
                         </div>
                     </div>
                 </div>

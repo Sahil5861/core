@@ -178,6 +178,18 @@
     font-weight: bold;
 }
 
+.tech-logo {
+      height: 80px;
+      object-fit: contain;
+      padding: 10px;
+    }
+    .tech-name {
+        margin-top: 10px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #333;
+    }
+
 .thm-btn {
     display: inline-block;
     background-color: #ff6600;
@@ -410,6 +422,59 @@
     </div>
 </div>
 <!-- about-details end -->
+
+<div class="container-fluid my-5">
+    <!-- Technologies Used Carousel -->
+    <div class="section-title">
+        <h2 class="text-center">Technologies We Use</h2>
+      </div>
+      <div class="tech-carousel owl-carousel owl-theme mt-4">
+          <div class="text-center">
+              <img src="https://img.icons8.com/color/150/000000/android-os.png" class="tech-logo" alt="Android"/>
+              <p class="tech-name">Android</p>
+          </div>
+          <div class="text-center">
+              <img src="https://img.icons8.com/color/100/python--v1.png" class="tech-logo" alt="Python"/>
+              <p class="tech-name">Python</p>
+          </div>
+          <div class="text-center">
+              <img src="https://img.icons8.com/ios-filled/100/fa314a/laravel.png" class="tech-logo" alt="Laravel"/>
+              <p class="tech-name">Laravel</p>
+          </div>
+          <div class="text-center">
+              <img src="https://img.icons8.com/color/150/000000/html-5--v1.png" class="tech-logo" alt="HTML"/>
+              <p class="tech-name">HTML</p>
+          </div>
+          <div class="text-center">
+              <img src="https://img.icons8.com/color/150/000000/javascript--v1.png" class="tech-logo" alt="JS"/>
+              <p class="tech-name">JS</p>
+          </div>
+          <div class="text-center">
+              <img src="https://img.icons8.com/color/150/000000/css3.png" class="tech-logo" alt="JS"/>
+              <p class="tech-name">JS</p>
+          </div>
+          <div class="text-center">
+              <img src="https://img.icons8.com/color/150/000000/kotlin.png" class="tech-logo" alt="Kotlin"/>
+              <p class="tech-name">Kotlin</p>
+          </div>
+          <div class="text-center">
+              <img src="https://img.icons8.com/color/150/000000/firebase.png" class="tech-logo" alt="Firebase"/>
+              <p class="tech-name">Firebase</p>
+          </div>
+          <div class="text-center">
+              <img src="https://img.icons8.com/color/150/000000/github.png" class="tech-logo" alt="GitHub"/>
+              <p class="tech-name">GitHub</p>
+          </div>
+          <div class="text-center">
+              <img src="https://img.icons8.com/color/150/000000/figma.png" class="tech-logo" alt="Figma"/>
+              <p class="tech-name">Figma</p>
+          </div>
+          <div class="text-center">
+              <img src="https://img.icons8.com/color/100/000000/nextjs.png" class="tech-logo" alt="Next.js"/>
+              <p class="tech-name">Next Js</p>
+          </div>            
+      </div>
+</div>
 
 
 

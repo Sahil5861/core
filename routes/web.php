@@ -188,6 +188,7 @@ Route::post('blog-multipleDeactive', [BlogController::class,'multipleDeactive'])
 Route::get('/',[FrontendController::class,'home'])->name('home');
 Route::get('/about-us',[FrontendController::class,'about_us'])->name('about-us');
 Route::get('/services',[FrontendController::class,'services'])->name('services');
+Route::get('/service/{id}',[FrontendController::class,'service_detail'])->name('service.details');
 // Route::get('/projects',[FrontendController::class,'projects'])->name('projects');
 Route::get('/contact-us',[FrontendController::class, 'contact_us'])->name('contact-us');
 

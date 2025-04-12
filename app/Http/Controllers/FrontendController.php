@@ -43,6 +43,12 @@ class FrontendController extends Controller
         return view('frontend.service',$this->data);
     }
 
+    public function service_detail($id){
+        $service = OurService::where('id', $id)->first();
+        $this->data['service'] = $service;
+        return view('frontend.service_details',$this->data);
+    }
+
     public function projects(){
         return view('projects',$this->data);
     }
