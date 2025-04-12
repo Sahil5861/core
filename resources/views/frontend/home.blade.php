@@ -332,17 +332,21 @@
                 <div class="part-text">
                     <h2>
                         <span class="special">
-                            12 YEARS EXPERIENCE
+                            MORE THAN 12 YRARS OF EXPERIENCE
                         </span>
-                        Before you proceed,
-                        learn about our team.
+                        IN TURNING IDEAS INTO DIGITAL REALITIES
                     </h2>
-                    <p>Lorem Ipsum is simply dummy text of them printing typesetting
-                        has been the industry's standard dummy text ever since the and
-                        specimen book five centuries.</p>
-                    <p>Lorem Ipsum is simply dummy text of them printing typesetting
-                        has been the industry's standard dummy text ever since the and
-                        specimen book five centuries.</p>
+                    <p>- With over 12 years of industry expertise, our IT solutions company 
+                        specializes in turning innovative ideas into robust digital realities. 
+                        We partner with businesses to deliver tailored technology solutions that
+                         enhance performance, scalability, and success. Whether it's software develo
+                         pment, cloud integration, or digital transformation, we bring visions to life 
+                         with precision and passion.</p>
+                    <p>- At the heart of our journey lies a commitment to innovation and excellence.
+                         For more than a decade, we've empowered businesses to thrive in the digital
+                          age by crafting solutions that align seamlessly with their goals. Our team
+                           transforms challenges into opportunities, ensuring every project is a step
+                            toward a smarter, more connected future. Together, we redefine what's possible.</p>
                 </div>
             </div>
             <div class="col-xl-5 col-lg-5">
@@ -371,7 +375,7 @@
             <div class="col-xl-3 col-lg-3 aos-init" data-aos="new-animation" data-aos-delay="100"
                 data-aos-duration="500">
                 <div class="single-statics">
-                    <span class="number"><span class="counter">12</span>+</span>
+                    <span class="number"><span class="counter">9</span>+</span>
                     <span class="title">Years of experience</span>
                     <div class="bg-icon">
                         <img src="{{asset('images/timetable.svg')}}"
@@ -456,8 +460,9 @@
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-8 col-md-8">
                 <div class="section-title-2 text-center">
-                    <h2>Meet Our Talented Team</h2>
-                    <p>Our team is a group of passionate and skilled professionals dedicated to delivering excellence.</p>
+                    <h2>Say hello to our skilled and dedicated team!</h2>
+                    <p>Our team is made up of talented and driven individuals 
+                        who work together to achieve exceptional results.</p>
                 </div>
             </div>
         </div>
@@ -491,7 +496,7 @@
             <div class="col-xl-12 col-lg-12">
                 <div class="team-bouttons">
                     <h2>We are hiring!</h2>
-                    <p>Join Our Innovative Team and Shape the Future!</p>
+                    <p>Join Our Innovative Team And Help Us Shape The Future!</p>
                     <a href="#" class="btn-murtes-3">Join our team</a>                    
                 </div>
             </div>
@@ -501,28 +506,25 @@
 <!-- team end -->
 
 <!-- support begin -->
-<div class="support support-3">
+<div class="support support-3" style="padding: 20px 0">
     <div class="container">
         <div class="row justify-content-between">
 
             <div class="col-xl-5 col-lg-5 d-xl-flex d-lg-flex d-block align-items-center">
                 <div class="part-text">
                     <span class="phone-number">{{env('COMPANY_PHONE')}}</span>
-                    <p>But I must explain to you how all this mistaken
-                        denouncing praising pain was born and via us
-                        passing pain was born give you.</p>
+                    <p>We’re available 24/7!
+                        Contact to require a detailed analysis and assessment of your plan.</p>
 
                     <a href="#" class="support-button">Contact now <i class="fas fa-long-arrow-alt-right"></i></a>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6">
                 <div class="part-cta">
-                    <a href="#" class="cta-button">CALL FOR
-                        ADVICE NOW</a>
-                    <h2>To make requests
-                        for further information,
-                        contact us via our social
-                        channels.</h2>
+                    <a href="#" class="cta-button">REACH OUT NOW</a>
+                    <h2>Obtain further information by
+                         contacting with our experienced 
+                         IT staff.</h2>
                 </div>
             </div>
 
@@ -536,12 +538,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-10 col-md-8">
-                <div class="section-title-2 text-center">
-                    <span class="subtitle">OUR PORTFOLIO</span>
-                    <h2>We do awesome work
-                        some of our work</h2>
-                    <p>But I must explain to you how all this mistaken denouncing
-                        praising pain was born and I will give you</p>
+                <div class="section-title-2">
+                    <span class="subtitle  text-center" style="text-align: center">OUR PORTFOLIO</span>
+                    <h2 class="">A Glimpse of Our Unique, Trendy & Profitable Enterprise Solutions</h2>
+                    <p>Have a sneak peek at some of our recent work delivered to our
+                         esteemed global clients belonging to various industry verticals. 
+                         Get a feel for the innovative, quality-rich product you will 
+                         receive when you collaborate with JPLoft as your trusted 
+                         technology partner for your web and app development project.</p>
                 </div>
             </div>
         </div>
