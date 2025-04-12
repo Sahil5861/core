@@ -332,7 +332,7 @@
                 <div class="part-text">
                     <h2>
                         <span class="special">
-                            MORE THAN 9 YRARS OF EXPERIENCE
+                            MORE THAN 9 YEARS OF EXPERIENCE
                         </span>
                         IN TURNING IDEAS INTO DIGITAL REALITIES
                     </h2>
