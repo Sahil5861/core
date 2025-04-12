@@ -255,7 +255,7 @@
 <div class="banner2">
     <video autoplay muted loop playsinline class="bg-video">
       <source src="{{asset('images/home_video.mp4')}}" type="video/mp4">
-      Your browser does not support the video tag.
+      Your browser not support the video tag.
     </video>
   
     <div class="banner-content2">      
