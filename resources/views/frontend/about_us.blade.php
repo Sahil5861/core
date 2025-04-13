@@ -257,7 +257,7 @@
         <div class="row">
             <div class="col-xl-6 col-lg-6">
                 <div class="breadcrumb-content">
-                    <h2>About us</h2>
+                    <h2 style="width: 1100px; font-weight: 400; font-size: 2em">We deliver innovative IT solutions that are smart, simple, and built with a human touch. By blending creativity with expertise, we empower businesses to thrive in a fast-paced digital world.</h2>
                     <ul>
                         <li><a href="https://html.themexriver.com/murtes/murtes/about.html#">Home</a></li>
                         <li>About</li>
@@ -308,8 +308,8 @@
     <div class="row align-items-center bg-white">
         <!-- Left Side Content -->
         <div class="col-md-8">
-            <h6 class="text-primary fw-semibold">About Company</h6>
-            <h2 class="fw-bold">About Company</h2>
+            <h6 class="text-primary fw-semibold">About Core Tech Info</h6>
+            <h2 class="fw-bold">Introducing the Minds Behind IT Excellence</h2>
             <p class="text-muted">
                 We are more than just an IT company; we are your strategic technology partner, committed to empowering your business with innovative and advanced solutions. Driven by a passion for excellence and a dedication to continuous innovation, we strive to transform your operations and ensure you remain at the forefront of today’s rapidly evolving digital landscape..
             </p>
@@ -320,7 +320,7 @@
         <div class="col-md-4 position-relative">
             <img src="{{asset('images/'.env('CEO_IMAEG'))}}" alt="CEO" class="img-fluid rounded" width="400">
             <div class="ceo-badge">
-                <strong>Mr.{{env('CEO_NAME')}}</strong> <br>
+                <strong>Mr. {{env('CEO_NAME')}}</strong> <br>
                 <a href="#">CEO - {{env('COMPANY_NAME')}}</a>
             </div>
         </div>
@@ -367,7 +367,7 @@
 <section class="cta-section">
     <div class="container">
         <div class="cta-content">
-            <h3 class="cta-title">Better IT Solutions And Services At Your <span>Fingertips</span></h3>            
+            <h3 class="cta-title">Connecting Businesses, Ideas and People to Propel Your Business To New Heights.</h3>            
         </div>
     </div>
 </section>
@@ -479,27 +479,25 @@
 
 
 <!-- support begin -->
-<div class="support support-3">
+<div class="support support-3" style="padding: 20px 0">
     <div class="container">
         <div class="row justify-content-xl-between justify-content-lg-between justify-content-center">
             
             <div class="col-xl-5 col-lg-5 col-md-8 d-xl-flex d-lg-flex d-block align-items-center">
                 <div class="part-text">
                     <span class="phone-number">{{env('COMPANY_PHONE')}}</span>
-                    <p>But I must explain to you how all this mistaken
-                        denouncing praising pain was born and via us
-                        passing pain was born give you.</p>
+                    <p>We’re available 24/7!
+                        Contact to require a detailed analysis and assessment of your plan.</p>
                     
                     <a href="https://html.themexriver.com/murtes/murtes/about.html#" class="support-button">Contact now <i class="fas fa-long-arrow-alt-right"></i></a>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6">
                 <div class="part-cta">
-                    <a href="https://html.themexriver.com/murtes/murtes/about.html#" class="cta-button">CALL FOR ADVICE NOW</a>
-                    <h2>To make requests
-                        for further information,
-                        contact us via our social
-                        channels.</h2>
+                    <a href="https://html.themexriver.com/murtes/murtes/about.html#" class="cta-button">REACH OUT NOW</a>
+                        <h2>Obtain further information by
+                             contacting with our experienced 
+                             IT staff.</h2>
                 </div>
             </div>
 
