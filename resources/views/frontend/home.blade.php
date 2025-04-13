@@ -226,6 +226,7 @@
       .banner-content2 h1{
         font-size: 24px !important;
       }
+
     }
 
     
@@ -554,8 +555,8 @@
             <div class="col-xl-6 col-lg-10 col-md-8">
                 <div class="section-title-2">
                     <span class="subtitle  text-center" style="text-align: center">OUR PORTFOLIO</span>
-                    <h2 class="">A Glimpse of Our Unique, Trendy & Profitable Enterprise Solutions</h2>
-                    <p>Have a sneak peek at some of our recent work delivered to our
+                    <h2 style="width: 600px; text-align: center">A Glimpse of Our Unique, Trendy & Profitable Enterprise Solutions</h2>
+                    <p style="text-align: center">Have a sneak peek at some of our recent work delivered to our
                          esteemed global clients belonging to various industry verticals. 
                          Get a feel for the innovative, quality-rich product you will 
                          receive when you collaborate with JPLoft as your trusted 
@@ -633,10 +634,8 @@
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-10 col-md-8">
                 <div class="section-title-2 text-center">
-                    <h2>Read our article<br>
-                        tips and news</h2>
-                    <p>But I must explain to you how all this mistaken denouncing
-                        praising pain was born and I will give you</p>
+                    <h2>Dive into Fresh Insights</h2>
+                    <p>Tips & Trends to Stay Ahead</p>
                 </div>
             </div>
         </div>
@@ -662,10 +661,8 @@
                 data-aos-duration="2000" data-aos-easing="ease-in-sine" --}}
             <div class="col-xl-4 col-lg-4 col-md-6 aos-init">
                 <div class="small-contact">
-                    <h3>Have any project
-                        in your mind?</h3>
-                    <p>All the Lorem Ipsum generators the
-                        necessa making this first.</p>
+                    <h3>Got a Vision? Let’s Turn Ideas into Action!</h3>
+                    <p>Talk to an expert to take the next step on your digital transformation journey.</p>
                     <form>
                         <input type="text" placeholder="Name here">
                         <input type="email" placeholder="Email here">
