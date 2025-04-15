@@ -473,7 +473,7 @@
 <div class="team-5">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-8 col-md-8">
+            <div class="col-xl-12 col-lg-8 col-md-8">
                 <div class="section-title-2 text-center">
                     <h2>Say hello to our skilled and dedicated team!</h2>
                     <p>Our team is made up of talented and driven individuals 
@@ -552,10 +552,10 @@
 <div class="project project-3">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-10 col-md-8">
+            <div class="col-xl-12 col-lg-10 col-md-8">
                 <div class="section-title-2">
                     <span class="subtitle  text-center" style="text-align: center">OUR PORTFOLIO</span>
-                    <h2 style="width: 600px; text-align: center">A Glimpse of Our Unique, Trendy & Profitable Enterprise Solutions</h2>
+                    <h2 style="text-align: center">A Glimpse of Our Unique, Trendy & Profitable Enterprise Solutions</h2>
                     <p style="text-align: center">Have a sneak peek at some of our recent work delivered to our
                          esteemed global clients belonging to various industry verticals. 
                          Get a feel for the innovative, quality-rich product you will 
@@ -632,7 +632,7 @@
 <div class="blog blog-3" style="padding: 0; padding-bottom:100px;">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-10 col-md-8">
+            <div class="col-xl-12 col-lg-10 col-md-8">
                 <div class="section-title-2 text-center">
                     <h2>Dive into Fresh Insights</h2>
                     <p>Tips & Trends to Stay Ahead</p>
