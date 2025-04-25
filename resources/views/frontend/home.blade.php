@@ -5,7 +5,7 @@
     top: 0;
     height: auto;
     bottom: 85px;
-    background: url("/images/service-4-bg.jpg") center center no-repeat;
+    background: url("/images/service-1.jpg") center center no-repeat;
     background-size: cover; 
 }
     .owl-carousel .item {
