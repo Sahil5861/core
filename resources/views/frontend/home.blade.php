@@ -1,5 +1,13 @@
 @extends('layouts.frontend_default')
 <style>
+
+.service-2.service-4:after {
+    top: 0;
+    height: auto;
+    bottom: 85px;
+    background: url("/images/service-4-bg.jpg") center center no-repeat;
+    background-size: cover; 
+}
     .owl-carousel .item {
             padding: 5px;
         }
@@ -349,17 +357,13 @@
                         </span>
                         IN TURNING IDEAS INTO DIGITAL REALITIES
                     </h2>
-                    <p>- With over 12 years of industry expertise, our IT solutions company 
+                    <p>- With over 9 years of industry expertise, our IT solutions company 
                         specializes in turning innovative ideas into robust digital realities. 
                         We partner with businesses to deliver tailored technology solutions that
-                         enhance performance, scalability, and success. Whether it's software develo
-                         pment, cloud integration, or digital transformation, we bring visions to life 
+                         enhance performance, scalability, and success. Whether it's software development,
+                          cloud integration, or digital transformation, we bring visions to life 
                          with precision and passion.</p>
-                    <p>- At the heart of our journey lies a commitment to innovation and excellence.
-                         For more than a decade, we've empowered businesses to thrive in the digital
-                          age by crafting solutions that align seamlessly with their goals. Our team
-                           transforms challenges into opportunities, ensuring every project is a step
-                            toward a smarter, more connected future. Together, we redefine what's possible.</p>
+                    <p>- At the heart of our journey lies a steadfast commitment to innovation and excellence. Over the past nine years, we have empowered businesses to thrive in the digital age by crafting solutions that align seamlessly with their goals. Our team excels at transforming challenges into opportunities, ensuring every project is a step toward a smarter, more connected future. Together, we continuously redefine what's possible</p>
                 </div>
             </div>
             <div class="col-xl-5 col-lg-5">
@@ -529,7 +533,7 @@
                 <div class="part-text">
                     <span class="phone-number">{{env('COMPANY_PHONE')}}</span>
                     <p>We’re available 24/7!
-                        Contact to require a detailed analysis and assessment of your plan.</p>
+                        Get in touch for a detailed analysis and thorough assessment of your plan.</p>
 
                     <a href="#" class="support-button">Contact now <i class="fas fa-long-arrow-alt-right"></i></a>
                 </div>

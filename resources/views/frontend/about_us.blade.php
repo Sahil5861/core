@@ -257,7 +257,7 @@
         <div class="row">
             <div class="col-xl-6 col-lg-6">
                 <div class="breadcrumb-content">
-                    <h2 style="width: 1100px; font-weight: 400; font-size: 2em">We deliver innovative IT solutions that are smart, simple, and built with a human touch. By blending creativity with expertise, we empower businesses to thrive in a fast-paced digital world.</h2>
+                    <h2 style="width: 1100px; font-weight: 400; font-size: 2em">We craft smart, human-focused IT solutions to drive business success.</h2>
                     <ul>
                         <li><a href="https://html.themexriver.com/murtes/murtes/about.html#">Home</a></li>
                         <li>About</li>
@@ -395,22 +395,12 @@
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-6 col-md-10">
                 <div class="part-text">
-                    <h2 class="first-child">Early Formative Years</h2>
-                    <p>We help transform the world's most important businesses into vigorous,
-                            that anticipate the agile unpredictable, adapt rapidly to disruption and
-                            opposition. We work with clients who not hide from the future but want
-                            with high potential and high ambition.</p>
-                    <p>We help transform the world's most important businesses into vigorous,
-                            that anticipate the agile unpredictable, adapt and rapidly to disruption
-                            with high potential high ambitio</p>
+                    <h2 class="first-child">"Making Resilience Simple"</h2>
+                    <p>We partner with leading businesses to become resilient, embrace uncertainty, adapt to disruptions, and boldly navigate the future with ambition and vision.</p>
+                    <p>We empower the world's most influential businesses to become resilient and dynamic, prepared to face unpredictability with agility, adapt swiftly to disruptions, and channel their high ambition and potential into transformative success.</p>
                     <h2>The Growth Trajectory</h2>
-                    <p>We help transform the world's most important businesses into vigorous,
-                            that anticipate the agile unpredictable, adapt rapidly to disruption and
-                            opposition. We work with clients who not hide from the future but want
-                            with high potential and high ambition.</p>
-                    <p>We help transform the world's most important businesses into vigorous,
-                            that anticipate the agile unpredictable, adapt and rapidly to disruption
-                            with high potential high ambitio</p>
+                    <p>Our company thrives on innovation, combining technical expertise with creative thinking. We deliver tailored solutions, empowering businesses to adapt, excel, and overcome challenges in today's rapidly evolving digital landscape.</p>
+                    <p>With a client-focused approach, we foster resilience and success through cutting-edge technology. By anticipating trends and embracing change, we position businesses to thrive in an unpredictable world, cultivating partnerships that drive sustained growth and transformation.</p>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-10">
