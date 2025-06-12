@@ -3706,7 +3706,7 @@ ul {
       .support.support-3 .part-cta .cta-button:hover {
         background: transparent; }
     .support.support-3 .part-cta h2 {
-      font-size: 45px;
+      font-size: 35px;
       line-height: 55px;
       font-weight: 800;
       color: #fff;
@@ -3784,7 +3784,7 @@ ul {
       font-weight: 500;
       margin-bottom: 32px; }
     .blog .small-contact form input {
-      height: 60px;
+      height: 50px;
       width: 100%;
       padding: 0 20px;
       border: 1px solid #3787f3;

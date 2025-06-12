@@ -28,7 +28,7 @@
                         
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item dropdown {{ request()->is('/') ? 'active' : '' }}">
+                                    {{-- <li class="nav-item dropdown {{ request()->is('/') ? 'active' : '' }}">
                                         <a class="nav-link dropdown-toggle" href="https://html.themexriver.com/murtes/murtes/about.html#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                                             <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/index.html">Home One</a>
@@ -37,6 +37,9 @@
                                             <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/index-4.html">Home Four</a>
                                             <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/index-5.html">Home Five</a>
                                         </div>
+                                    </li> --}}
+                                    <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
+                                        <a class="nav-link" href="{{route('home')}}">Home</a>
                                     </li>
                                     <li class="nav-item {{ request()->routeIs('about-us') ? 'active' : '' }}">
                                         <a class="nav-link" href="{{route('about-us')}}">About</a>

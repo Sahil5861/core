@@ -1,5 +1,9 @@
 @extends('layouts.frontend_default')
 <style>
+.me-custom {
+    margin-right: 60px;
+}
+
 
 .service-2.service-4:after {
     top: 0;
@@ -357,13 +361,8 @@
                         </span>
                         IN TURNING IDEAS INTO DIGITAL REALITIES
                     </h2>
-                    <p>- With over 9 years of industry expertise, our IT solutions company 
-                        specializes in turning innovative ideas into robust digital realities. 
-                        We partner with businesses to deliver tailored technology solutions that
-                         enhance performance, scalability, and success. Whether it's software development,
-                          cloud integration, or digital transformation, we bring visions to life 
-                         with precision and passion.</p>
-                    <p>- At the heart of our journey lies a steadfast commitment to innovation and excellence. Over the past nine years, we have empowered businesses to thrive in the digital age by crafting solutions that align seamlessly with their goals. Our team excels at transforming challenges into opportunities, ensuring every project is a step toward a smarter, more connected future. Together, we continuously redefine what's possible</p>
+                    <p>- With 9+ years of expertise, we transform ideas into powerful digital solutions. From software development to cloud integration and digital transformation, we deliver tailored technology that drives growth and success.</p>
+                    <p>-With years of expertise, we empower businesses through innovation and excellence, crafting solutions that align with their goals. Our team turns challenges into opportunities, driving a smarter, more connected future while redefining possibilities.</p>
                 </div>
             </div>
             <div class="col-xl-5 col-lg-5">
@@ -450,8 +449,7 @@
                         for your organization</h2>
                 </div>
                 <div class="col-xl-5 col-lg-5 d-xl-flex d-lg-flex d-block align-items-center">
-                    <p>But I must explain to you how all this mistaken denouncing
-                        praising pain was born and because those who do not know.</p>
+                    <p>"We craft innovative solutions tailored to your organization's needs, ensuring seamless growth and transformation." Let me know if you need further refinements</p>
                 </div>
             </div>
         </div>
@@ -563,7 +561,7 @@
                     <p style="text-align: center">Have a sneak peek at some of our recent work delivered to our
                          esteemed global clients belonging to various industry verticals. 
                          Get a feel for the innovative, quality-rich product you will 
-                         receive when you collaborate with JPLoft as your trusted 
+                         receive when you collaborate with CTI as your trusted 
                          technology partner for your web and app development project.</p>
                 </div>
             </div>
@@ -663,19 +661,26 @@
 
             {{-- data-aos="fade-up" data-aos-offset="300"
                 data-aos-duration="2000" data-aos-easing="ease-in-sine" --}}
-            <div class="col-xl-4 col-lg-4 col-md-6 aos-init">
-                <div class="small-contact">
-                    <h3>Got a Vision? Let’s Turn Ideas into Action!</h3>
-                    <p>Talk to an expert to take the next step on your digital transformation journey.</p>
-                    <form>
-                        <input type="text" placeholder="Name here">
-                        <input type="email" placeholder="Email here">
-                        <button type="submit">Contact Now</button>
-                    </form>
+            
+        </div>
+    </div>
+    <div class="container-fluid bg-primary text-white">
+        <div class="d-flex justify-content-center">
+            <div class="small-contact d-flex align-items-center text-center p-4">
+                <div class="d-flex flex-column justify-content-center align-items-center me-custom">
+                    <h3 class="fw-bold">Have a Question? Get Expert Answers!</h3>
+                    <p>Submit your query and our experts will get back to you with the best solutions.</p>
                 </div>
+                <form class="w-100" style="max-width: 700px;">
+                    <input type="text" class="form-control mb-2" placeholder="Your Name">
+                    <input type="email" class="form-control mb-2" placeholder="Your Email">
+                    <input class="form-control mb-3" placeholder="Describe Your Query"></input>
+                    <button type="submit" class="btn btn-light w-100">Submit Query</button>
+                </form>
             </div>
         </div>
     </div>
+
 </div>
 <!-- blog end -->
 @endsection

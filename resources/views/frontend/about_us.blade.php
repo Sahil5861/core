@@ -247,26 +247,171 @@
             transform: translateY(0);
         }
     }
+    .banner-content2 {
+      position: absolute;
+      z-index: 1; /* Keeps your content above the video */
+      top: 75%;
+      left: 20px;
+      transform: translateY(-50%);
+      min-height: 450px;
+      height: max-content;
+      width: 80%;
+      text-align: left;      
+      /* background: rgba(0, 0, 0, 0.4); */
+      padding: 30px 40px;
+      border-radius: 10px;
+      color: #fff;
+    }
+
+    .typewriter-container {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: baseline;
+      gap: 8px;
+      margin-top: 10px;
+      flex-wrap: wrap;    
+      padding: 20px;
+      margin-top: 200px;
+      min-height: 315px;
+      /* background: rgba(0, 00, 0, 0.5) */
+    }
+    .typewriter-container h1{
+        font-size: 60px !important;
+    }
+
+    .static-text {
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .typewriter-text {
+      /* border-right: 2px solid #fff; */
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: blink 0.7s infinite;
+      line-height: 1.5;
+      vertical-align: baseline;
+    }
+
+    .banner-btn{
+        position: absolute;
+        bottom: 20px;
+        left: 20px;     
+    }
+
+
+      .fade-in {
+        display: inline-block;
+        opacity: 0;
+        animation: fadeIn 0.4s forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+            opacity: 1;
+            padding: 10px 0 !important;
+        }
+      }
+
+    @media (max-width: 768px) {
+      .banner2 {
+        background: url('../images/banner-5.jpg') no-repeat center center/cover;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .banner-content2 {
+        
+        top: 90%;
+        left: 10px;        
+        font-size: 24px;
+        padding: 20px;
+      }
+      .banner-content2 h1{
+        font-size: 24px !important;
+      }
+
+    }
         
 
 </style>
 @section('section')
 <!-- breadcrumb begin -->
-<div class="breadcrumb-murtes" style="background: url(../images/about_us.png)">
+<div class="breadcrumb-murtes" style="background: url(../images/about-us.png)">
     <div class="container">
         <div class="row">
             <div class="col-xl-6 col-lg-6">
-                <div class="breadcrumb-content">
-                    <h2 style="width: 1100px; font-weight: 400; font-size: 2em">We craft smart, human-focused IT solutions to drive business success.</h2>
+                <div class="typewriter-container">
+                    <h4 style="color:#fff">"We craft smart, human-focused IT solutions to drive business success."</h4>
+                    <h1 class="static-text"style="color:#fff">What We Really Are!</h1>        
+                    <h1 class="typewriter-text" style="color:#fff" id="typewriter"></h1>
+                </div> 
+                {{-- <div class="breadcrumb-content">
+                    <h2 style="width: 1100px; font-weight: 400; font-size: 2em">We craft smart, human-focused IT solutions to drive business success.</h2> --}}
                     <ul>
-                        <li><a href="https://html.themexriver.com/murtes/murtes/about.html#">Home</a></li>
-                        <li>About</li>
+                         <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
+                             <a class="nav-link" style="color:#fff" href="{{route('home')}}">Home</a>
+                             <a class="nav-link" style="color:#fff" href="{{route('about-us')}}">About Us</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    const phrases = [
+      "Strategic Partner",
+      "Empowering Growth",
+      "Technical Excellence",
+      "Scalable Solutions",
+      "Innovative Frameworks",
+      "Seamless Experiences",
+      "Digital Transformation",
+      "Future-Ready Tech"
+    ];
+
+    let currentPhraseIndex = 0;
+    let currentCharIndex = 0;
+    const typeSpeed = 50;
+    const eraseSpeed = 50;
+    const delayBetweenPhrases = 2000;
+    
+
+
+    const typewriterElement = document.getElementById("typewriter");
+
+    function type() {
+      const currentPhrase = phrases[currentPhraseIndex];
+      if (currentCharIndex < currentPhrase.length) {
+        const span = document.createElement('span');
+        const char = currentPhrase.charAt(currentCharIndex);
+        span.innerHTML = char === " " ? "&nbsp;" : char;
+        span.classList.add('fade-in');
+        typewriterElement.appendChild(span);
+        currentCharIndex++;
+        setTimeout(type, typeSpeed);
+      } else {
+        setTimeout(erase, delayBetweenPhrases);
+      }
+    }
+
+    function erase() {
+      if (currentCharIndex > 0) {
+        typewriterElement.textContent = typewriterElement.textContent.slice(0, -1);
+        currentCharIndex--;
+        setTimeout(erase, eraseSpeed);
+      } else {
+        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+        setTimeout(type, 300);
+      }      
+    }
+
+    // Start the typewriter effect
+    type();
+</script>
 <!-- breadcrumb end -->
 
 <!-- about begin -->
@@ -395,7 +540,7 @@
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-6 col-md-10">
                 <div class="part-text">
-                    <h2 class="first-child">"Making Resilience Simple"</h2>
+                    <h2 class="first-child">Making Resilience Simple</h2>
                     <p>We partner with leading businesses to become resilient, embrace uncertainty, adapt to disruptions, and boldly navigate the future with ambition and vision.</p>
                     <p>We empower the world's most influential businesses to become resilient and dynamic, prepared to face unpredictability with agility, adapt swiftly to disruptions, and channel their high ambition and potential into transformative success.</p>
                     <h2>The Growth Trajectory</h2>
