@@ -339,7 +339,7 @@
 </style>
 @section('section')
 <!-- breadcrumb begin -->
-<div class="breadcrumb-murtes" style="background: url(../images/about-us.png)">
+<div class="breadcrumb-murtes" style="background: url(../images/about-us.png) center center no-repeat">
     <div class="container">
         <div class="row">
             <div class="col-xl-6 col-lg-6">
@@ -351,10 +351,6 @@
                 {{-- <div class="breadcrumb-content">
                     <h2 style="width: 1100px; font-weight: 400; font-size: 2em">We craft smart, human-focused IT solutions to drive business success.</h2> --}}
                     <ul>
-                         <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
-                             <a class="nav-link" style="color:#fff" href="{{route('home')}}">Home</a>
-                             <a class="nav-link" style="color:#fff" href="{{route('about-us')}}">About Us</a>
-                        </li>
                     </ul>
                 </div>
             </div>
