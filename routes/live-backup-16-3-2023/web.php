@@ -19,13 +19,13 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/about-us', function () {
-    return view('about_us');
-})->name('about-us');
+// Route::get('/about-us', function () {
+//     return view('about_us');
+// })->name('about-us');
 
-Route::get('/service', function () {
-    return view('service');
-})->name('service');
+Route::get('/services', function () {
+    return view('services');
+})->name('services');
 
 Route::get('/dashboard', function () {
      // return view('dashboard');

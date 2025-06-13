@@ -45,19 +45,19 @@
                                     </li>
                                     <li class="nav-item {{ request()->routeIs('about-us') ? 'active' : '' }}">
                                         <a class="nav-link" href="{{route('about-us')}}">About</a>
-                                    </li>                                        
+                                    </li>                                   
 
                                     <li class="nav-item dropdown {{ request()->routeIs('services') ? 'active' : '' }}">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Service</a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown3" style="width: 300px;">
-                                            <a class="dropdown-item" href="#" style="width: 100%;">Android App Development</a>
-                                            <a class="dropdown-item" href="#" style="width: 100%;">Hybrid App Development</a>
-                                            <a class="dropdown-item" href="#" style="width: 100%;">Web Development</a>
-                                            <a class="dropdown-item" href="#" style="width: 100%;">TV App Development</a>
-                                            <a class="dropdown-item" href="#" style="width: 100%;">Cloud Solution Service</a>
-                                            <a class="dropdown-item" href="#" style="width: 100%;">iOS App Development</a>
-                                            <a class="dropdown-item" href="#" style="width: 100%;">UI/UX Design</a>
-                                            <a class="dropdown-item" href="#" style="width: 100%;">DevOps Service</a>
+                                            <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">Android App Development</a>
+                                            <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">Hybrid App Development</a>
+                                            <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">Web Development</a>
+                                            <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">TV App Development</a>
+                                            <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">Cloud Solution Service</a>
+                                            <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">iOS App Development</a>
+                                            <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">UI/UX Design</a>
+                                            <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">DevOps Service</a>
                                         </div>                                        
                                     </li>
 
@@ -72,9 +72,10 @@
                                             <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/blog-details.html">Blog Details</a>
                                         </div>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="https://html.themexriver.com/murtes/murtes/contact.html">Contact</a>
-                                    </li>
+
+                                    <li class="nav-item {{ request()->routeIs('contact-us') ? 'active' : '' }}">
+                                        <a class="nav-link" href="{{route('contact-us')}}">Contact Us</a>
+                                    </li> 
                                 </ul>
                         </div>
                     </nav>

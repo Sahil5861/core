@@ -1037,6 +1037,7 @@ ul {
       color: #fff;
       font-weight: 600;
       margin: 0 25px;
+      width: 80%;
       padding: 0;
       padding: 40px 0;
       position: relative; }
@@ -3653,7 +3654,8 @@ ul {
 
 .support.support-3 {
   background: #0064eb;
-  padding: 165px 0; }
+  margin-bottom: 80px;
+  padding: 30px 0; }
   .support.support-3 .part-text {
     position: relative;
     z-index: 2; }

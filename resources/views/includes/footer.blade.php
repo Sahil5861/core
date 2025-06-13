@@ -88,7 +88,7 @@
         <div class="row justify-content-between">
             <div class="col-xl-6 col-lg-6 d-xl-flex d-lg-flex d-block align-items-center">
                 <div class="cp-area">
-                    <p>Copyright © 2019 murtes. All Rights Reserved</p>
+                    <p>Copyright © 2019 Core Tech Info. All Rights Reserved</p>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6">

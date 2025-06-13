@@ -57,7 +57,7 @@ class FrontendController extends Controller
     // }
 
     public function contact_us(){
-        return view('contact_us',$this->data);
+        return view('frontend.contact_us',$this->data);
     }
     
     public function blog()
