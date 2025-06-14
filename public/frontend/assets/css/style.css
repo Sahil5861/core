@@ -536,6 +536,10 @@ a:active {
 a i {
   padding: 0 2px; }
 
+.part-img-12{
+  min-width: 500px;
+}
+
 img {
   max-width: 100%; }
 
@@ -5671,7 +5675,7 @@ ul {
       -o-transition: all 0.3s ease-in;
       transition: all 0.3s ease-in; }
   .contact .contact-form {
-    background: #f4f9ff;
+    background: #0064eb;
     border: 1px solid #e9f1fc;
     border-radius: 10px;
     padding: 40px 30px;

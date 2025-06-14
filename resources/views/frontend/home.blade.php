@@ -23,6 +23,7 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             color: #000;
             transition: 0.3s ease-in-out;
+            min-width: 25vw;
             padding: 20px;
             margin: 0;
         }
@@ -445,7 +446,7 @@
         <div class="this-section-title">
             <div class="row justify-content-between">
                 <div class="col-xl-6 col-lg-6">
-                    <h2>We creating solutions<br>
+                    <h2>We create solutions<br>
                         for your organization</h2>
                 </div>
                 <div class="col-xl-5 col-lg-5 d-xl-flex d-lg-flex d-block align-items-center">
@@ -538,7 +539,7 @@
             </div>
             <div class="col-xl-6 col-lg-6">
                 <div class="part-cta">
-                    <a href="#" class="cta-button">REACH OUT NOW</a>
+                    <a href="{{route('contact-us')}}" class="cta-button">REACH OUT NOW</a>
                     <h2>Obtain further information by
                          contacting with our experienced 
                          IT staff.</h2>

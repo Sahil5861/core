@@ -65,7 +65,7 @@
                                         <a class="nav-link" href="#">Team</a>
                                     </li> --}}
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{route('our-work')}}">Our Work</a>
+                                        <a class="nav-link" href="#">Our Work</a>
                                     </li>
                                     
                                     <li class="nav-item dropdown">

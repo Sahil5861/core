@@ -231,26 +231,154 @@
             transform: translateY(0);
         }
     }
+    .typewriter-container {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: baseline;
+      gap: 8px;
+      margin-top: 10px;
+      flex-wrap: wrap;    
+      padding: 20px;
+      margin-top: 270px;
+      min-height: 230px;
+      /* background: rgba(0, 00, 0, 0.5) */
+    }
+    .typewriter-container h1{
+        font-size: 42px !important;
+    }
+
+    .static-text {
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .typewriter-text {
+      /* border-right: 2px solid #fff; */
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: blink 0.7s infinite;
+      line-height: 1.5;
+      vertical-align: baseline;
+    }
+
+    .banner-btn{
+        position: absolute;
+        bottom: 20px;
+        left: 20px;     
+    }
+
+
+      .fade-in {
+        display: inline-block;
+        opacity: 0;
+        animation: fadeIn 0.4s forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+            opacity: 1;
+            padding: 10px 0 !important;
+        }
+      }
+
+    @media (max-width: 768px) {
+      .banner2 {
+        background: url('../images/banner-5.jpg') no-repeat center center/cover;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .banner-content2 {
+        
+        top: 90%;
+        left: 10px;        
+        font-size: 24px;
+        padding: 20px;
+      }
+      .banner-content2 h1{
+        font-size: 24px !important;
+      }
+
+    }
+    .map-embed {
+        margin-top: 50px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
         
 
 </style>
+
 @section('section')
 <!-- breadcrumb begin -->
-<div class="breadcrumb-murtes" style="background: url(../images/about_us.png)">
+<div class="breadcrumb-murtes" style="background: url(../images/contact-us.png) no-repeat center center;">
     <div class="container">
         <div class="row">
             <div class="col-xl-6 col-lg-6">
-                <div class="breadcrumb-content">
-                    <h2>Contact us</h2>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li>Contact</li>
-                    </ul>
-                </div>
+               <div class="typewriter-container">
+                    <h4 style="color:#fff">Talk to Us—Innovation Begins with a Conversation</h4>
+                    <h1 class="static-text"style="color:#fff">Let's talk—your ideas matter!</h1>        
+                    <h1 class="typewriter-text" style="color:#fff" id="typewriter"></h1>
+                </div> 
             </div>
         </div>
     </div>
 </div>
+<script>
+    const phrases = [
+      "Reach",
+      "Connect",
+      "Engage",
+      "Support",
+      "Inquiry",
+      "Response",
+      "Assistance",
+      "Communication"
+    ];
+
+    let currentPhraseIndex = 0;
+    let currentCharIndex = 0;
+    const typeSpeed = 50;
+    const eraseSpeed = 50;
+    const delayBetweenPhrases = 2000;
+    
+
+
+    const typewriterElement = document.getElementById("typewriter");
+
+    function type() {
+      const currentPhrase = phrases[currentPhraseIndex];
+      if (currentCharIndex < currentPhrase.length) {
+        const span = document.createElement('span');
+        const char = currentPhrase.charAt(currentCharIndex);
+        span.innerHTML = char === " " ? "&nbsp;" : char;
+        span.classList.add('fade-in');
+        typewriterElement.appendChild(span);
+        currentCharIndex++;
+        setTimeout(type, typeSpeed);
+      } else {
+        setTimeout(erase, delayBetweenPhrases);
+      }
+    }
+
+    function erase() {
+      if (currentCharIndex > 0) {
+        typewriterElement.textContent = typewriterElement.textContent.slice(0, -1);
+        currentCharIndex--;
+        setTimeout(erase, eraseSpeed);
+      } else {
+        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+        setTimeout(type, 300);
+      }      
+    }
+
+    // Start the typewriter effect
+    type();
+</script>
 <!-- breadcrumb end -->
 
 <!-- contact begin -->
@@ -260,42 +388,69 @@
             <div class="col-xl-5 col-lg-6">
                 <div class="contact-address">
                     <div class="row">
+                        <div class="col-xl-5 col-lg-5">
+                            <div class="part-img-12">
+                                    <img src="{{asset('images/img12.gif')}}" alt="" class="main-img aos-animate">
+                            </div>
+                        </div>
                         <div class="col-xl-12 col-lg-12 col-md-4">
                             <div class="single-address">
                                 <div class="part-icon">
-                                    <img src="./Murtes - contactus_files/notification.svg" alt="">
+                                    <img src="images/notification.svg" alt="">
                                     <span class="title">Email</span>
                                 </div>
                                 <div class="part-text">
-                                    <p>hello24@gmail.com<br>
-                                        support@gmail.com</p>
+                                    <p>
+                                        <a href="mailto:hello@gmail.com?subject=Hello%20There&body=I%20would%20like%20to%20get%20in%20touch." class="email-link">
+                                            hello@gmail.com
+                                        </a><br>
+                                        <a href="mailto:support@gmail.com?subject=Need%20Support&body=Please%20assist%20me%20with..." class="email-link">
+                                            support@gmail.com
+                                        </a>
+                                    </p>
+
                                 </div>
                             </div>
+
                         </div>
                         <div class="col-xl-12 col-lg-12 col-md-4">
                             <div class="single-address">
                                 <div class="part-icon">
-                                    <img src="./Murtes - contactus_files/hierarchy.svg" alt="">
+                                    <img src="images/hierarchy.svg" alt="">
                                     <span class="title">Cell</span>
                                 </div>
                                 <div class="part-text">
-                                    <p>+88 538 675 468<br>
-                                        +88 467 956 735</p>
+                                    <p>
+                                        <a href="https://wa.me/917065392005" class="whatsapp-link" target="_blank">
+                                            +91 706 539 2005
+                                        </a><br>
+                                        <a href="https://wa.me/88467956735" class="whatsapp-link" target="_blank">
+                                            +88 467 956 735
+                                        </a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-xl-12 col-lg-12 col-md-4">
                             <div class="single-address">
                                 <div class="part-icon">
-                                    <img src="./Murtes - contactus_files/start.svg" alt="">
+                                    <img src="images/start.svg" alt="">
                                     <span class="title">Add:</span>
                                 </div>
                                 <div class="part-text">
-                                    <p>568 Telegustan MH<br>
-                                        Discristan, Mostris.</p>
+                                    <p>
+                                        <a href="https://www.google.com/maps/search/?api=1&query=62+Pocket-25+Sector-24+Rohini+Delhi+110085" class="map-link" target="_blank">
+                                            Ground Floor, 62, <br>
+                                             Pocket-25, Sector-24,<br>
+                                            Rohini, Delhi-110085.
+                                        </a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
 
                 </div>
@@ -306,9 +461,9 @@
                     <h4>Need a better quote
                         for our service?</h4>
                     <form>
-                        <input type="text" placeholder="Ara Sompa">
-                        <input type="email" placeholder="+00 568 468 864">
-                        <input type="text" placeholder="Email here">
+                        <input type="text" placeholder="Enter your Name">
+                        <input type="email" placeholder="Your Contact Number">
+                        <input type="text" placeholder="Your Email Address">
                         <textarea placeholder="Message...."></textarea>
                     </form>
                     <button type="submit" class="btn-murtes-6">Submit Now <i
@@ -317,7 +472,19 @@
             </div>
         </div>
     </div>
-    <div class="map" id="map" style="position: relative; overflow: hidden;">
+    <div class="map-embed mt-5">
+        <iframe 
+            src="https://www.google.com/maps?q=62,+Pocket-25,+Sector-24,+Rohini,+Delhi-110085&output=embed" 
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    {{-- <div class="map" id="map" style="position: relative; overflow: hidden;">
         <div
             style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
             <div><button draggable="false" aria-label="Keyboard shortcuts" title="Keyboard shortcuts" type="button"
@@ -961,7 +1128,7 @@
                 </tr>
             </table>
         </div>
-    </div>
+    </div> --}}
 </div>
 <!-- contact end -->
 

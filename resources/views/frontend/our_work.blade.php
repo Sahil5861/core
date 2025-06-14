@@ -141,7 +141,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url("../images/laptop-2620118_1280.jpg");
+    background-image: url("../images/services.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Keeps background fixed */
@@ -178,18 +178,6 @@
     font-weight: bold;
 }
 
-.tech-logo {
-      height: 80px;
-      object-fit: contain;
-      padding: 10px;
-    }
-    .tech-name {
-        margin-top: 10px;
-        font-weight: 600;
-        font-size: 1.1rem;
-        color: #333;
-    }
-
 .thm-btn {
     display: inline-block;
     background-color: #ff6600;
@@ -199,10 +187,6 @@
     border-radius: 5px;
     transition: 0.3s;
 }
-
-    .tech-carousel .item{
-        padding: 10px 0px;
-    }
 
 .thm-btn:hover {
     background-color: #cc5200;
@@ -230,24 +214,7 @@
     .ceo-badge:hover{
         transform: translateX(20%);
     }
-
-
-    .animate-up-down{
-        animation: animate-up-down 2s infinite;        
-    }
-
-    @keyframes animate-up-down{
-        0% {
-            transform: translateY(0);
-        }
-        50%{
-            transform: translateY(10px);
-        }
-        100%{
-            transform: translateY(0);
-        }
-    }
-    .banner-content2 {
+        banner-content2 {
       position: absolute;
       z-index: 1; /* Keeps your content above the video */
       top: 75%;
@@ -272,11 +239,12 @@
       flex-wrap: wrap;    
       padding: 20px;
       margin-top: 200px;
+      max-width: 70vw;
       min-height: 315px;
       /* background: rgba(0, 00, 0, 0.5) */
     }
     .typewriter-container h1{
-        font-size: 60px !important;
+        font-size: 40px !important;
     }
 
     .static-text {
@@ -314,22 +282,13 @@
         }
       }
 
-     @media (max-width: 768px) {
+    @media (max-width: 768px) {
       .banner2 {
         background: url('../images/banner-5.jpg') no-repeat center center/cover;
         justify-content: center;
         padding: 20px;
         text-align: center;
-        max-height: 60vh;
-        }
-        .banner-button { 
-            max-height: 50px;
-            line-height: 50px !important;
-        }
-        .typewriter-container{
-            margin-top: -30px;
-        }
-    }
+      }
 
       .banner-content2 {
         
@@ -343,18 +302,17 @@
       }
 
     }
-        
 
 </style>
 @section('section')
 <!-- breadcrumb begin -->
-<div class="breadcrumb-murtes" style="background: url(../images/about-us.png) center center no-repeat">
+<div class="breadcrumb-murtes" style="background: url(../images/Our_work.png) center center no-repeat">
     <div class="container">
-        <div class="row">
+       <div class="row">
             <div class="col-xl-6 col-lg-6">
                 <div class="typewriter-container">
-                    <h4 style="color:#fff">"We craft smart, human-focused IT solutions to drive business success."</h4>
-                    <h1 class="static-text"style="color:#fff">What We Really Are!</h1>        
+                    <h4 style="color:#fff">Explore how our experience and dedication can future-proof your website.</h4>
+                    <h1 class="static-text"style="color:#fff">Our Work: Empowering Innovation, Driving Excellence</h1>        
                     <h1 class="typewriter-text" style="color:#fff" id="typewriter"></h1>
                 </div> 
                 {{-- <div class="breadcrumb-content">
@@ -368,14 +326,14 @@
 </div>
 <script>
     const phrases = [
-      "Strategic Partner",
-      "Empowering Growth",
-      "Technical Excellence",
-      "Scalable Solutions",
-      "Innovative Frameworks",
-      "Seamless Experiences",
-      "Digital Transformation",
-      "Future-Ready Tech"
+      "Innovative Tech Solutions",
+      "Scalable Digital Systems",
+      "Secure Cloud Infrastructure",
+      "Agile Development Processes",
+      "Reliable IT Services",
+      "Visionary Software Engineering",
+      "Efficient Data Management",
+      "Cutting-Edge Web Solutions"
     ];
 
     let currentPhraseIndex = 0;
@@ -453,191 +411,189 @@
 </div> --}}
 
 
+<!-- service begin -->
 
-<section class="container my-2">
-    <div class="row align-items-center bg-white">
-        <!-- Left Side Content -->
-        <div class="col-md-8">
-            <h6 class="text-primary fw-semibold">About Core Tech Info</h6>
-            <h2 class="fw-bold">Introducing the Minds Behind IT Excellence</h2>
-            <p class="text-muted">
-                We are more than just an IT company; we are your strategic technology partner, committed to empowering your business with innovative and advanced solutions. Driven by a passion for excellence and a dedication to continuous innovation, we strive to transform your operations and ensure you remain at the forefront of today’s rapidly evolving digital landscape..
-            </p>
-            <a href="#" class="btn btn-primary">Join Our Team</a>
-        </div>
+<!-- service end -->
 
-        <!-- Right Side Image -->
-        <div class="col-md-4 position-relative">
-            <img src="{{asset('images/'.env('CEO_IMAEG'))}}" alt="CEO" class="img-fluid rounded" width="400">
-            <div class="ceo-badge">
-                <strong>Mr. {{env('CEO_NAME')}}</strong> <br>
-                <a href="#">CEO - {{env('COMPANY_NAME')}}</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- about end -->
-
-
-
-<!-- choosing reason begin -->
-<div class="container mb-3">
-    <div class="choosing-reason-about-page">
-        <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <div class="single-reason">
-                    <h3>What We Do?</h3>
-                    <p>We are a freelance IT company that provides innovative solutions and develops customized systems tailored to our clients' needs. Our expertise spans various industries, ensuring businesses can operate efficiently with cutting-edge technology.</p>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <div class="single-reason">
-                    <h3>Our Mission & Vision</h3>
-                    <p>Our mission is to empower businesses by leveraging technology to drive growth and efficiency. We envision a future where businesses can seamlessly adapt to new challenges with agile, scalable, and secure IT solutions.</p>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <div class="single-reason">
-                    <h3>Who We Are?</h3>
-                    <p>We are a team of passionate developers, designers, and IT experts dedicated to delivering high-quality solutions. Our team specializes in various programming languages, frameworks, and IT tools to build scalable and reliable systems.</p>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <div class="single-reason">
-                    <h3>Our Team Members</h3>
-                    <p>Our team consists of experienced professionals who collaborate to bring innovative ideas to life. From software developers to project managers, we ensure seamless execution of projects, prioritizing efficiency, security, and client satisfaction.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<section class="cta-section">
+<!-- service list begin -->
+{{-- <div class="service-2 service-4 service-list-service-page">
     <div class="container">
-        <div class="cta-content">
-            <h3 class="cta-title">Connecting Businesses, Ideas and People to Propel Your Business To New Heights.</h3>            
+        <div class="row no-gutters service-list-row">
+
+            @foreach ($services as $key => $service)                
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single-servcie">
+                        <div class="left">
+                            <div class="number">{{$key + 1}}</div>
+                        </div>
+                        <div class="right">
+                            <h3 class="service-title" style="height: 70px;">{{$service->title}}</h3>
+                            <p class="service-content">{{$service->description}}</p>
+                            <a href="https://html.themexriver.com/murtes/murtes/service.html#" class="service-details-button">details <i class="fas fa-long-arrow-alt-right"></i></a>
+                        </div>
+                    </div>
+                </div>            
+            @endforeach
         </div>
     </div>
-</section>
+</div> --}}
+    <div class="container-fluid this-container">
+        <div class="part-project">
+            <div class="row">
+                @foreach ($project as $item)                    
+                    <div class="col-md-4 mb-4">  <!-- Adjust column size based on layout preference -->
+                        <div class="card project-card" style="min-height: 30.4rem;">
+                            <img src="{{asset('images/project/'.$item->image)}}" width="200" height="200" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{$item->title}}</h5>
+                                <p class="card-text">
+                                    {{ \Illuminate\Support\Str::words($item->description, 10, '...') }}
+                                </p>                            
+                                <a href="{{route('client-details')}}" class="btn btn-primary">Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    <!-- service list end -->
+
+    <!-- choosing reason begin -->
+    <div class="choosing-reason-2 choosing-reason-service-page">
+        <div class="container this-container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-6 col-md-8">
+                    <div class="section-title-2 text-center">
+                        <h2>How we work?<br>and provide services!</h2>
+                        <p>The path we follow in every project.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="500">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">01</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Meeting with
+                                    the customer
+                                    </h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p> --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="1000">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">02</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Working hard and smartly on
+                                    the project</h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p> --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="1500">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">03</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Finishing the
+                                    project
+                                with perfection</h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p> --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">04</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Successfully
+                                    launching project</h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">05</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Handing over the project to the customer</h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">06</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Getting thier feedback</h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">07</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Learning From Those feedbacks</h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">08</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Implementing those learnings to the next project</h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <!-- choosing reason end -->
 
-{{-- <section class="container tech my-4 p-3">    
-    <h2 class="text-center">Our Technology</h2>
-
-    <div class="tech-carousel owl-carousel owl-theme mt-3">
-        <div class="item"><img src="icons/html.png" alt="HTML"></div>
-        <div class="item"><img src="icons/css.png" alt="CSS"></div>
-        <div class="item"><img src="icons/js.png" alt="JavaScript"></div>
-        <div class="item"><img src="icons/python.png" alt="Python"></div>
-        <div class="item"><img src="icons/php.png" alt="PHP"></div>
-        <div class="item"><img src="icons/laravel.png" alt="Laravel"></div>
-        <div class="item"><img src="icons/nextjs.png" alt="Next.js"></div>
-        <div class="item"><img src="icons/flutter.png" alt="Flutter"></div>
-      </div>
-</section> --}}
 
 
-<!-- about-details begin -->
-<div class="about-details">
+
+
+<<div class="support support-3" style="padding: 20px 0">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-6 col-md-10">
-                <div class="part-text">
-                    <h2 class="first-child">Making Resilience Simple</h2>
-                    <p>We partner with leading businesses to become resilient, embrace uncertainty, adapt to disruptions, and boldly navigate the future with ambition and vision.</p>
-                    <p>We empower the world's most influential businesses to become resilient and dynamic, prepared to face unpredictability with agility, adapt swiftly to disruptions, and channel their high ambition and potential into transformative success.</p>
-                    <h2>The Growth Trajectory</h2>
-                    <p>Our company thrives on innovation, combining technical expertise with creative thinking. We deliver tailored solutions, empowering businesses to adapt, excel, and overcome challenges in today's rapidly evolving digital landscape.</p>
-                    <p>With a client-focused approach, we foster resilience and success through cutting-edge technology. By anticipating trends and embracing change, we position businesses to thrive in an unpredictable world, cultivating partnerships that drive sustained growth and transformation.</p>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-10">
-                <div class="part-img">
-                    <img src="{{asset('images/about_growth.jpg')}}" alt="" width="200" height="600">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- about-details end -->
+        <div class="row justify-content-between">
 
-<div class="container-fluid my-5">
-    <!-- Technologies Used Carousel -->
-    <div class="section-title">
-        <h2 class="text-center">Technologies We Use</h2>
-      </div>
-      <div class="tech-carousel owl-carousel owl-theme mt-4">
-          <div class="text-center">
-              <img src="https://img.icons8.com/color/150/000000/android-os.png" class="tech-logo" alt="Android"/>
-              <p class="tech-name">Android</p>
-          </div>
-          <div class="text-center">
-              <img src="https://img.icons8.com/color/100/python--v1.png" class="tech-logo" alt="Python"/>
-              <p class="tech-name">Python</p>
-          </div>
-          <div class="text-center">
-              <img src="https://img.icons8.com/ios-filled/100/fa314a/laravel.png" class="tech-logo" alt="Laravel"/>
-              <p class="tech-name">Laravel</p>
-          </div>
-          <div class="text-center">
-              <img src="https://img.icons8.com/color/150/000000/html-5--v1.png" class="tech-logo" alt="HTML"/>
-              <p class="tech-name">HTML</p>
-          </div>
-          <div class="text-center">
-              <img src="https://img.icons8.com/color/150/000000/javascript--v1.png" class="tech-logo" alt="JS"/>
-              <p class="tech-name">JS</p>
-          </div>
-          <div class="text-center">
-              <img src="https://img.icons8.com/color/150/000000/css3.png" class="tech-logo" alt="JS"/>
-              <p class="tech-name">Css</p>
-          </div>
-          <div class="text-center">
-              <img src="https://img.icons8.com/color/150/000000/kotlin.png" class="tech-logo" alt="Kotlin"/>
-              <p class="tech-name">Kotlin</p>
-          </div>
-          <div class="text-center">
-              <img src="https://img.icons8.com/color/150/000000/firebase.png" class="tech-logo" alt="Firebase"/>
-              <p class="tech-name">Firebase</p>
-          </div>
-          <div class="text-center">
-              <img src="https://img.icons8.com/color/150/000000/github.png" class="tech-logo" alt="GitHub"/>
-              <p class="tech-name">GitHub</p>
-          </div>
-          <div class="text-center">
-              <img src="https://img.icons8.com/color/150/000000/figma.png" class="tech-logo" alt="Figma"/>
-              <p class="tech-name">Figma</p>
-          </div>
-          <div class="text-center">
-              <img src="https://img.icons8.com/color/100/000000/nextjs.png" class="tech-logo" alt="Next.js"/>
-              <p class="tech-name">Next Js</p>
-          </div>            
-      </div>
-</div>
-
-
-
-<!-- support begin -->
-<div class="support support-3" style="padding: 20px 0">
-    <div class="container">
-        <div class="row justify-content-xl-between justify-content-lg-between justify-content-center">
-            
-            <div class="col-xl-5 col-lg-5 col-md-8 d-xl-flex d-lg-flex d-block align-items-center">
+            <div class="col-xl-5 col-lg-5 d-xl-flex d-lg-flex d-block align-items-center">
                 <div class="part-text">
                     <span class="phone-number">{{env('COMPANY_PHONE')}}</span>
                     <p>We’re available 24/7!
-                        Contact to require a detailed analysis and assessment of your plan.</p>
-                    
+                        Get in touch for a detailed analysis and thorough assessment of your plan.</p>
+
                     <a href="#" class="support-button">Contact now <i class="fas fa-long-arrow-alt-right"></i></a>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6">
                 <div class="part-cta">
                     <a href="{{route('contact-us')}}" class="cta-button">REACH OUT NOW</a>
-                        <h2>Obtain further information by
-                             contacting with our experienced 
-                             IT staff.</h2>
+                    <h2>Obtain further information by
+                         contacting with our experienced 
+                         IT staff.</h2>
                 </div>
             </div>
 
@@ -699,28 +655,6 @@
         });
         
     });
-</script>
-
-<script>
-    $(document).ready(function(){
-        $(".tech-carousel").owlCarousel({
-            loop: true,
-            margin: 10,
-            autoplay: true,
-            autoplayTimeout: 2000, // Continuous loop without pause
-            autoplaySpeed: 2500, // Controls transition smoothness
-            smartSpeed: 2500,
-            dots: false,
-            nav: false,
-            slideTransition: 'linear',
-            responsive: {
-                0: { items: 3 },
-                600: { items: 5 },
-                1000: { items: 7 }
-            }
-        });
-
-    })
 </script>
 
 <script>

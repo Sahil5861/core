@@ -616,6 +616,7 @@ pre code {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
+    margin-top: 150px;
     margin-right: auto;
     margin-left: auto
 }
@@ -4795,7 +4796,6 @@ input[type=submit].btn-block {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    min-width: 0;
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
@@ -7061,10 +7061,10 @@ button.bg-dark:hover {
     flex-direction: row !important
 }
 
-.flex-column {
+/* .flex-column {
     -ms-flex-direction: column !important;
     flex-direction: column !important
-}
+} */
 
 .flex-row-reverse {
     -ms-flex-direction: row-reverse !important;

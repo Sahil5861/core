@@ -191,6 +191,8 @@ Route::get('/services',[FrontendController::class,'services'])->name('services')
 Route::get('/service/{id}',[FrontendController::class,'service_detail'])->name('service.details');
 // Route::get('/projects',[FrontendController::class,'projects'])->name('projects');
 Route::get('/contact-us',[FrontendController::class, 'contact_us'])->name('contact-us');
+Route::get('/our-work',[FrontendController::class, 'our_work'])->name('our-work');
+Route::get('/client-details',[FrontendController::class, 'client_details'])->name('client-details');
 
 // Route::get('/contact-us',[ContactController::class, 'index'])->name('contact-us');
 
