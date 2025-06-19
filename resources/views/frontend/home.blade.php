@@ -1,5 +1,10 @@
 @extends('layouts.frontend_default')
 <style>
+
+
+html {
+    scroll-behavior: smooth;
+}
 .me-custom {
     margin-right: 60px;
 }
@@ -241,6 +246,19 @@
       }
 
     }
+    @keyframes levitate {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px); /* move up by 15px */
+    }
+    }
+
+    .levitate {
+    animation: levitate 3s ease-in-out infinite;
+    }
+
 
     
         
@@ -288,7 +306,7 @@
       </div>              
     </div>
     <div class="buttons banner-btn">
-        <a href="#"class="banner-button btn-murtes">Explor more <i class="fas fa-long-arrow-alt-right"></i></a>                        
+        <a href="#"class="banner-button btn-murtes">Explore more <i class="fas fa-long-arrow-alt-right"></i></a>                        
     </div>
 </div>
 
@@ -368,18 +386,7 @@
             </div>
             <div class="col-xl-5 col-lg-5">
                 <div class="part-img">
-                    {{-- <img class="main-img aos-init aos-animate"
-                        src="{{asset('images/about-3.jpg')}}" alt=""
-                        data-aos="fade" data-aos-offset="300" data-aos-duration="1000"
-                        data-aos-easing="ease-in-sine">
-                    <img class="overlap-img aos-init aos-animate"
-                        src="{{asset('images/about-3-small.jpg')}}"
-                        alt="" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1200"
-                        data-aos-easing="ease-in-sine">
-                    <a href="https://www.youtube.com/watch?v=NU9Qyic_mX0" class="play-button mfp-iframe"><i
-                            class="fa fa-play"></i></a> --}}
-
-                        <img src="{{asset('images/img.gif')}}" alt="" class="main-img aos-animate">
+                       <img src="{{ asset('images/img.gif') }}" alt="" class="main-img aos-animate levitate">
                 </div>
             </div>
         </div>
@@ -473,7 +480,7 @@
 <!-- service end -->
 
 <!-- team begin -->
-<div class="team-5">
+<div class="team-5" id="our-team">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-12 col-lg-8 col-md-8">
@@ -510,45 +517,13 @@
                 </div>            
             @endforeach
         </div>
-        <div class="row">
-            <div class="col-xl-12 col-lg-12">
-                <div class="team-bouttons">
-                    <h2>We are hiring!</h2>
-                    <p>Join Our Innovative Team And Help Us Shape The Future!</p>
-                    <a href="#" class="btn-murtes-3">Join our team</a>                    
-                </div>
-            </div>
-        </div>
+       
     </div>
 </div>
 <!-- team end -->
 
 <!-- support begin -->
-<div class="support support-3" style="padding: 20px 0">
-    <div class="container">
-        <div class="row justify-content-between">
-
-            <div class="col-xl-5 col-lg-5 d-xl-flex d-lg-flex d-block align-items-center">
-                <div class="part-text">
-                    <span class="phone-number">{{env('COMPANY_PHONE')}}</span>
-                    <p>We’re available 24/7!
-                        Get in touch for a detailed analysis and thorough assessment of your plan.</p>
-
-                    <a href="#" class="support-button">Contact now <i class="fas fa-long-arrow-alt-right"></i></a>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6">
-                <div class="part-cta">
-                    <a href="{{route('contact-us')}}" class="cta-button">REACH OUT NOW</a>
-                    <h2>Obtain further information by
-                         contacting with our experienced 
-                         IT staff.</h2>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
+@include('includes.contact-form')
 <!-- support end -->
 
 <!-- project begin -->
@@ -646,7 +621,7 @@
             @foreach ($blogData as $blog)                
                 <div class="col-xl-4 col-lg-4 col-md-6 aos-init mb-4">
                     <div class="card blog-card" style="min-height: 30.5rem;">
-                        <img src="{{asset('images/blogs/'.$blog->image)}}" class="card-img-top" alt="Blog Image">
+                       <img src="{{ asset('images/blogs/'.$blog->image) }}" class="card-img-top" alt="Blog Image" style="height: 247px; width: auto; object-fit: cover;">
                         <div class="card-body">
                             <h3 class="card-title">{{$blog->title}}</h3>                            
                             <p class="card-text">{{ \Illuminate\Support\Str::words($blog->content, 10, '...') }}</p>
@@ -668,7 +643,7 @@
     <div class="container-fluid bg-primary text-white">
         <div class="d-flex justify-content-center">
             <div class="small-contact d-flex align-items-center text-center p-4">
-                <div class="d-flex flex-column justify-content-center align-items-center me-custom">
+                <div class="justify-content-start align-items-start me-custom">
                     <h3 class="fw-bold">Have a Question? Get Expert Answers!</h3>
                     <p>Submit your query and our experts will get back to you with the best solutions.</p>
                 </div>
@@ -687,6 +662,7 @@
 @endsection
 @section('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
 <script>
     $(document).ready(function(){
         $(".service-crausel, .testiminial-crausel").owlCarousel({

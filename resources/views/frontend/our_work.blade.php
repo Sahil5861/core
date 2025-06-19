@@ -237,9 +237,9 @@
       gap: 8px;
       margin-top: 10px;
       flex-wrap: wrap;    
-      padding: 20px;
+      padding: 10px;
       margin-top: 200px;
-      max-width: 70vw;
+      min-width:  40vw;
       min-height: 315px;
       /* background: rgba(0, 00, 0, 0.5) */
     }
@@ -302,11 +302,35 @@
       }
 
     }
+     .bg-video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(107, 95, 175, 0.5); /* #6B5FAF with 50% opacity */
+        z-index: 1;
+    }
+ 
 
 </style>
 @section('section')
 <!-- breadcrumb begin -->
 <div class="breadcrumb-murtes" style="background: url(../images/Our_work.png) center center no-repeat">
+     <video autoplay muted loop playsinline class="bg-video">
+      <source src="{{asset('images/project/our-work_banner.mp4')}}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
     <div class="container">
        <div class="row">
             <div class="col-xl-6 col-lg-6">
@@ -437,6 +461,23 @@
         </div>
     </div>
 </div> --}}
+@include('includes.wave')
+<div class="project project-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-12 col-lg-10 col-md-8">
+                <div class="section-title-2">
+                    <span class="subtitle  text-center" style="text-align: center">OUR PORTFOLIO</span>
+                    <h2 style="text-align: center">A Glimpse of Our Unique, Trendy & Profitable Enterprise Solutions</h2>
+                    <p style="text-align: center">Have a sneak peek at some of our recent work delivered to our
+                         esteemed global clients belonging to various industry verticals. 
+                         Get a feel for the innovative, quality-rich product you will 
+                         receive when you collaborate with CTI as your trusted 
+                         technology partner for your web and app development project.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid this-container">
         <div class="part-project">
             <div class="row">
@@ -449,7 +490,7 @@
                                 <p class="card-text">
                                     {{ \Illuminate\Support\Str::words($item->description, 10, '...') }}
                                 </p>                            
-                                <a href="{{route('client-details')}}" class="btn btn-primary">Details →</a>
+                                <a href="{{route('client-details',$item->id)}}" class="btn btn-primary">Details →</a>
                             </div>
                         </div>
                     </div>
@@ -575,31 +616,7 @@
 
 
 
-<<div class="support support-3" style="padding: 20px 0">
-    <div class="container">
-        <div class="row justify-content-between">
-
-            <div class="col-xl-5 col-lg-5 d-xl-flex d-lg-flex d-block align-items-center">
-                <div class="part-text">
-                    <span class="phone-number">{{env('COMPANY_PHONE')}}</span>
-                    <p>We’re available 24/7!
-                        Get in touch for a detailed analysis and thorough assessment of your plan.</p>
-
-                    <a href="#" class="support-button">Contact now <i class="fas fa-long-arrow-alt-right"></i></a>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6">
-                <div class="part-cta">
-                    <a href="{{route('contact-us')}}" class="cta-button">REACH OUT NOW</a>
-                    <h2>Obtain further information by
-                         contacting with our experienced 
-                         IT staff.</h2>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
+@include('includes.contact-form')
 <!-- support end -->
 
 

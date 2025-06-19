@@ -268,10 +268,10 @@
       flex-direction: column;
       align-items: baseline;
       gap: 8px;
-      margin-top: 10px;
       flex-wrap: wrap;    
       padding: 20px;
       margin-top: 200px;
+      margin-bottom: 70px;
       min-height: 315px;
       /* background: rgba(0, 00, 0, 0.5) */
     }
@@ -342,21 +342,62 @@
         font-size: 24px !important;
       }
 
+    .bg-video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
     }
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(107, 95, 175, 0.644); /* #6B5FAF with 50% opacity */
+        z-index: 1;
+    }
+    .bg-video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(107, 95, 175, 0.5); /* #6B5FAF with 50% opacity */
+        z-index: 1;
+    }
+ 
         
 
 </style>
 @section('section')
 <!-- breadcrumb begin -->
 <div class="breadcrumb-murtes" style="background: url(../images/about-us.png) center center no-repeat">
+     <video autoplay muted loop playsinline class="bg-video">
+      <source src="{{asset('images/about-us_banner.mp4')}}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-xl-6 col-lg-6">
-                <div class="typewriter-container">
-                    <h4 style="color:#fff">"We craft smart, human-focused IT solutions to drive business success."</h4>
-                    <h1 class="static-text"style="color:#fff">What We Really Are!</h1>        
-                    <h1 class="typewriter-text" style="color:#fff" id="typewriter"></h1>
-                </div> 
+                <div class="typewriter-container position-relative z-5">
+                    <h4 style="color:#000000">"We craft smart, human-focused IT solutions to drive business success."</h4>
+                    <h1 class="static-text" style="color:#000000">What We Really Are!</h1>        
+                    <h1 class="typewriter-text" style="color:#000000" id="typewriter"></h1>
+                </div>
                 {{-- <div class="breadcrumb-content">
                     <h2 style="width: 1100px; font-weight: 400; font-size: 2em">We craft smart, human-focused IT solutions to drive business success.</h2> --}}
                     <ul>
@@ -452,7 +493,7 @@
     </div>
 </div> --}}
 
-
+@include('includes.wave')
 
 <section class="container my-2">
     <div class="row align-items-center bg-white">
@@ -463,7 +504,6 @@
             <p class="text-muted">
                 We are more than just an IT company; we are your strategic technology partner, committed to empowering your business with innovative and advanced solutions. Driven by a passion for excellence and a dedication to continuous innovation, we strive to transform your operations and ensure you remain at the forefront of today’s rapidly evolving digital landscape..
             </p>
-            <a href="#" class="btn btn-primary">Join Our Team</a>
         </div>
 
         <!-- Right Side Image -->
@@ -537,10 +577,45 @@
         <div class="item"><img src="icons/flutter.png" alt="Flutter"></div>
       </div>
 </section> --}}
+<div class="about-details">
+    <div class="container">
+        <!-- Section 1 -->
+       <div class="row justify-content-center align-items-center" style="margin-bottom: -5rem;">
+            <div class="col-xl-6 col-lg-6 col-md-10">
+                <div class="part-text">
+                    <h2 class="first-child">Making Resilience Simple</h2>
+                    <p>We partner with leading businesses to become resilient, embrace uncertainty, adapt to disruptions, and boldly navigate the future with ambition and vision.</p>
+                    <p>We empower the world's most influential businesses to become resilient and dynamic, prepared to face unpredictability with agility, adapt swiftly to disruptions, and channel their high ambition and potential into transformative success.</p>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-10">
+                <div class="part-img text-center">
+                    <img src="{{ asset('images/resilience.png') }}" alt="" width="100%" style="max-width: 400px;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="row justify-content-center align-items-center flex-md-row-reverse">
+            <div class="col-xl-6 col-lg-6 col-md-10">
+                <div class="part-text">
+                    <h2>The Growth Trajectory</h2>
+                    <p>Our company thrives on innovation, combining technical expertise with creative thinking. We deliver tailored solutions, empowering businesses to adapt, excel, and overcome challenges in today's rapidly evolving digital landscape.</p>
+                    <p>With a client-focused approach, we foster resilience and success through cutting-edge technology. By anticipating trends and embracing change, we position businesses to thrive in an unpredictable world, cultivating partnerships that drive sustained growth and transformation.</p>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-10">
+                <div class="part-img text-center">
+                    <img src="{{ asset('images/about_growth.jpg') }}" alt="" width="100%" style="max-width: 400px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- about-details begin -->
-<div class="about-details">
+{{-- <div class="about-details">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-6 col-md-10">
@@ -558,9 +633,14 @@
                     <img src="{{asset('images/about_growth.jpg')}}" alt="" width="200" height="600">
                 </div>
             </div>
+             <div class="col-xl-6 col-lg-6 col-md-10">
+                <div class="part-img">
+                    <img src="{{asset('images/resilience.png')}}" alt="" width="200" height="600">
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- about-details end -->
 
 <div class="container-fluid my-5">
@@ -612,38 +692,21 @@
           <div class="text-center">
               <img src="https://img.icons8.com/color/100/000000/nextjs.png" class="tech-logo" alt="Next.js"/>
               <p class="tech-name">Next Js</p>
-          </div>            
+          </div> 
+          <div class="text-center">
+              <img src="https://img.icons8.com/color/100/000000/ionic.png" class="tech-logo" alt="Ionic"/>
+              <p class="tech-name">Ionic</p>
+          </div> 
+          <div class="text-center">
+              <img src="https://img.icons8.com/?size=100&id=71257&format=png&color=000000" class="tech-logo" alt="Angular"/>
+              <p class="tech-name">Angular</p>
+          </div>              
       </div>
 </div>
 
 
 
 <!-- support begin -->
-<div class="support support-3" style="padding: 20px 0">
-    <div class="container">
-        <div class="row justify-content-xl-between justify-content-lg-between justify-content-center">
-            
-            <div class="col-xl-5 col-lg-5 col-md-8 d-xl-flex d-lg-flex d-block align-items-center">
-                <div class="part-text">
-                    <span class="phone-number">{{env('COMPANY_PHONE')}}</span>
-                    <p>We’re available 24/7!
-                        Contact to require a detailed analysis and assessment of your plan.</p>
-                    
-                    <a href="#" class="support-button">Contact now <i class="fas fa-long-arrow-alt-right"></i></a>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6">
-                <div class="part-cta">
-                    <a href="{{route('contact-us')}}" class="cta-button">REACH OUT NOW</a>
-                        <h2>Obtain further information by
-                             contacting with our experienced 
-                             IT staff.</h2>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
 <!-- support end -->
 
 

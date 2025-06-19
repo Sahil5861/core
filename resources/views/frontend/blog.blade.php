@@ -1,3 +1,123 @@
+{{-- 
+@extends('layouts.frontend_default')
+{{-- @section('title', 'Blogs') --}}
+{{-- @section('section')
+		<div class="page-header">
+			<div class="page-header__bg"
+				style="background-image: url(frontend/assets/images/background/header.jpg);"></div>
+			<!-- /.page-header__bg -->
+			<div class="container">
+				<ul class="thm-breadcrumb list-unstyled">
+					<li><a href="index.html">Home</a></li>
+					<li>Blog</li>
+				</ul>
+				<h2 class="page-header__title">Blog Page</h2><!-- /.page-header__title -->
+			</div><!-- /.container -->
+		</div><!-- /.page-header --> --}}
+
+
+		{{-- <section class="section-padding--top section-padding--bottom">
+			<div class="container">
+				<div class="row gutter-y-30">
+					@foreach($blog_data as $blog_detatils)
+					<div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1500ms"
+						data-wow-delay="000ms">
+						<div class="blog-card-one">
+							<div class="blog-card-one__image">
+	                            <!-- <img src="frontend/assets/images/blog/blog-1-1.jpg" alt=""> -->
+								<img src="{{asset('images/blogs/'.$blog_detatils->image)}}" alt="">
+								<a href="{{ route('blog_dt',['id' => $blog_detatils->id] )}}"></a>
+							</div><!-- /.blog-card-one__image -->
+							<div class="blog-card-one__content">
+								<div class="blog-card-one__meta">
+									<div class="blog-card-one__date">
+										<i class="fa fa-calendar-alt" aria-hidden="true"></i>
+										{{ $blog_detatils->created_at->format('F d, Y') }}
+									</div><!-- /.blog-card-one__date -->
+									<a href="{{ route('blog_dt',['id' => $blog_detatils->id] )}}" class="blog-card-one__category">{{$blog_detatils->title}}</a>
+									<!-- /.blog-card-one__category -->
+								</div><!-- /.blog-card-one__meta -->
+								<h3 class="blog-card-one__title"><a href="#">{{$blog_detatils->content}}</a></h3>
+								<a href="{{ route('blog_dt',['id' => $blog_detatils->id] )}}" class="blog-card-one__more">
+									Read More
+									<i class="fa fa-arrow-right"></i>
+								</a><!-- /.blog-card-one__more -->
+							</div><!-- /.blog-card-one__content -->
+						</div><!-- /.blog-card-one -->
+					</div><!-- /.col-lg-4 col-md-6 col-sm-12 -->
+					@endforeach
+				</div><!-- /.row gutter-y-30 -->
+			</div><!-- /.container -->
+		</section> --}}
+
+
+	{{-- <div class="mobile-nav__wrapper">
+		<div class="mobile-nav__overlay mobile-nav__toggler"></div>
+		<!-- /.mobile-nav__overlay -->
+		<div class="mobile-nav__content">
+			<a href="#" class="mobile-nav__close mobile-nav__toggler">
+				<span></span>
+				<span></span>
+			</a>
+
+			<div class="logo-box">
+				<a href="index.html" aria-label="logo image"><img src="assets/images/logo-light.png" width="98"
+						height="33" alt="Cretech"></a>
+			</div>
+			<!-- /.logo-box -->
+			<div class="mobile-nav__container"></div>
+			<!-- /.mobile-nav__container -->
+
+			<ul class="mobile-nav__contact list-unstyled">
+				<li>
+					<i class="fa fa-phone"></i>
+					<a href="tel:+8898006802">+ 88 ( 9800 ) 6802</a>
+				</li>
+				<li>
+					<i class="fa fa-envelope"></i>
+					<a href="mailto:needhelp@company.com">needhelp@company.com</a>
+				</li>
+				<li>
+					<i class="fa fa-map-marker-alt"></i>
+					88 Broklyn Golden Road Street <br> New York. USA
+				</li>
+			</ul><!-- /.mobile-nav__contact -->
+			<ul class="mobile-nav__social">
+				<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+				<li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+				<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+			</ul><!-- /.mobile-nav__social -->
+
+
+
+		</div>
+		<!-- /.mobile-nav__content -->
+	</div>
+	<!-- /.mobile-nav__wrapper -->
+
+	<div class="search-popup">
+		<div class="search-popup__overlay search-toggler"></div>
+		<!-- /.search-popup__overlay -->
+		<div class="search-popup__content">
+			<form action="#">
+				<label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+				<input type="text" id="search" placeholder="Search Here..." />
+				<button type="submit" aria-label="search submit" class="thm-btn">
+					<span><i class="icon-magnifying-glass"></i></span>
+				</button>
+			</form>
+		</div>
+		<!-- /.search-popup__content -->
+	</div>
+	<!-- /.search-popup -->
+
+	<a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+@endsection --}}
+
+
+
+
 @extends('layouts.frontend_default')
 {{-- <style>
     .owl-carousel .item {
@@ -237,13 +357,14 @@
       gap: 8px;
       margin-top: 10px;
       flex-wrap: wrap;    
-      padding: 20px;
+      padding: 10px;
       margin-top: 200px;
+      min-width:  40vw;
       min-height: 315px;
       /* background: rgba(0, 00, 0, 0.5) */
     }
     .typewriter-container h1{
-        font-size: 60px !important;
+        font-size: 40px !important;
     }
 
     .static-text {
@@ -302,18 +423,134 @@
 
     }
 
+    /* *{
+        margin: 0;
+        padding: 0;
+    }
+
+    section{
+        position:relative;
+        width: 100%;
+        height: 5vh;
+        background: #000000;
+    }
+
+    section .wave{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: url(images/blogs/wave.png);
+        background-size: 1000px 100px;
+    }
+
+    section .wave.wave1{
+        animation: animate-1 30s linear infinite;
+        z-index: 1000;
+        opacity: 1;
+        animation-delay: 0s;
+        bottom: 0;
+    }
+
+    @keyframes animate-1{
+        0%{
+            background-position-x: 0;
+        }
+        100%{
+            background-position-x: 1000px;
+        }
+    }
+
+
+    section .wave.wave2{
+        animation: animate-2 20s linear infinite;
+        z-index: 999;
+        opacity: 0.7;
+        animation-delay: -3s;
+        bottom: 10px;
+    }
+
+    @keyframes animate-2{
+        0%{
+            background-position-x: 0;
+        }
+        100%{
+            background-position-x: -1000px;
+        }
+    }
+    section .wave.wave3{
+        animation: animate-3 10s linear infinite;
+        z-index: 998;
+        opacity: 0.5;
+        animation-delay: -2s;
+        bottom: 15px;
+    }
+
+    @keyframes animate-3{
+        0%{
+            background-position-x: 0;
+        }
+        100%{
+            background-position-x: 1000px;
+        }
+    }
+    section .wave.wave4{
+        animation: animate-4 5s linear infinite;
+        z-index: 997;
+        opacity: 0.3;
+        animation-delay: -1s;
+        bottom: 20px;
+    }
+
+    @keyframes animate-4{
+        0%{
+            background-position-x: 0;
+        }
+        100%{
+            background-position-x: 1000px;
+        }
+    } */
+     .bg-video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(107, 95, 175, 0.5); /* #6B5FAF with 50% opacity */
+        z-index: 1;
+    }
+ 
+
 </style>
+
 @section('section')
 <!-- breadcrumb begin -->
-<div class="breadcrumb-murtes" style="background: url(../images/services.png) center center no-repeat">
+<div class="breadcrumb-murtes" style="background: url(../images/blogs/whiteBG.jpg) center center no-repeat">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="{{asset('images/blogs/blog_banner-video.mp4')}}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
     <div class="container">
        <div class="row">
-            <div class="col-xl-6 col-lg-6">
+            <div class="col-xl-6 col-lg-6 d- xl-flex d-lg-flex d-block align-items-center">
                 <div class="typewriter-container">
-                    <h4 style="color:#fff">"We craft smart, human-focused IT solutions to drive business success."</h4>
-                    <h1 class="static-text"style="color:#fff">What We Really Are!</h1>        
-                    <h1 class="typewriter-text" style="color:#fff" id="typewriter"></h1>
+                    <h1 class="static-text"style="color:#000000">Dive into Fresh Insights</h1> 
+                     <h1 class="typewriter-text" id="typewriter"></h1> 
                 </div> 
+                <div>
+                     <img src="{{ asset('/images/blogs/blog-banner-icon.png') }}" alt="" style="width: 40vw; margin-right: 5%;">
+                </div>
                 {{-- <div class="breadcrumb-content">
                     <h2 style="width: 1100px; font-weight: 400; font-size: 2em">We craft smart, human-focused IT solutions to drive business success.</h2> --}}
                     <ul>
@@ -324,16 +561,7 @@
     </div>
 </div>
 <script>
-    const phrases = [
-      "Strategic Partner",
-      "Empowering Growth",
-      "Technical Excellence",
-      "Scalable Solutions",
-      "Innovative Frameworks",
-      "Seamless Experiences",
-      "Digital Transformation",
-      "Future-Ready Tech"
-    ];
+    const phrases = @json($blogs_name);
 
     let currentPhraseIndex = 0;
     let currentCharIndex = 0;
@@ -392,7 +620,7 @@
                         <div class="col-lg-4">
                             <img src="{{asset('images/ceo.jpg')}}" alt="Saddam Husain" width="150">
                         </div>
-                        <div class="col-lg-6" style="display: flex; flex-direction:column; justify-content:center;">
+                        <div class="col-lg-6" style="display:  xl-flex d-lg-flex d-block align-items-center">; flex-direction:column; justify-content:center;">
                             <h5>Saddam Husain</h5>
                             <h6>Founder CEO</h6>
                         </div>
@@ -411,31 +639,11 @@
 
 
 <!-- service begin -->
-<div class="service-service-page">
-    <div class="container">
-        <div class="row justify-content-xl-between justify-content-lg-between justify-content-center">
-            <div class="col-xl-6 col-lg-6 col-md-9">
-                <div class="part-img">
-                    <img src="{{asset('images/service-7.jpg')}}" alt="">
-                </div>
-            </div>
-            <div class="col-xl-5 col-lg-5 col-md-9">
-                <div class="part-text">
-                    <h2>We run all kinds of IT
-                        services that vow your
-                        success</h2>
-                    <p>We help transform the world most important businesses into
-                        that anticipate the agile unpredtable adapt rapidly disruption
-                        with high potential and high ambition.</p>
-                </div>
-            </div>
-        </div>  
-    </div>
-</div>
+
 <!-- service end -->
 
 <!-- service list begin -->
-<div class="service-2 service-4 service-list-service-page">
+{{-- <div class="service-2 service-4 service-list-service-page">
     <div class="container">
         <div class="row no-gutters service-list-row">
 
@@ -455,111 +663,53 @@
             @endforeach
         </div>
     </div>
-</div>
-<!-- service list end -->
+</div> --}}
+    <!-- service list end -->
 
-<!-- choosing reason begin -->
-<div class="choosing-reason-2 choosing-reason-service-page">
-    <div class="container this-container">
-        <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-6 col-md-8">
-                <div class="section-title-2 text-center">
-                    <h2>How we work?<br>and provide services!</h2>
-                    <p>But I must explain to you how all this mistaken denouncing
-                            praising pain was born and I will give you</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="500">
-                <div class="single-reason">
-                    <div class="part-head">
-                        <span class="number">01</span>
-                    </div>
-                    <div class="part-body">
-                        <h3>Meeting with
-                                the customer
-                                </h3>
-                        {{-- <p>Collecting event old above shy bed favour income has stuff.</p> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="1000">
-                <div class="single-reason">
-                    <div class="part-head">
-                        <span class="number">02</span>
-                    </div>
-                    <div class="part-body">
-                        <h3>Work hard on
-                                the project</h3>
-                        {{-- <p>Collecting event old above shy bed favour income has stuff.</p> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="1500">
-                <div class="single-reason">
-                    <div class="part-head">
-                        <span class="number">03</span>
-                    </div>
-                    <div class="part-body">
-                        <h3>We finish the
-                                project</h3>
-                        {{-- <p>Collecting event old above shy bed favour income has stuff.</p> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
-                <div class="single-reason">
-                    <div class="part-head">
-                        <span class="number">04</span>
-                    </div>
-                    <div class="part-body">
-                        <h3>Successfully
-                                launch project</h3>
-                        {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <!-- choosing reason begin -->
 <!-- choosing reason end -->
+{{-- <section>
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+</section> --}}
 
+@include('includes.wave')
 
-
-
-
-<!-- support begin -->
-<div class="support support-3">
+<div class="blog blog-3" style="padding-bottom:100px;">
     <div class="container">
-        <div class="row justify-content-xl-between justify-content-lg-between justify-content-center">
-            
-            <div class="col-xl-5 col-lg-5 col-md-8 d-xl-flex d-lg-flex d-block align-items-center">
-                <div class="part-text">
-                    <span class="phone-number">{{env('COMPANY_PHONE')}}</span>
-                    <p>But I must explain to you how all this mistaken
-                        denouncing praising pain was born and via us
-                        passing pain was born give you.</p>
-                    
-                    <a href="https://html.themexriver.com/murtes/murtes/about.html#" class="support-button">Contact now <i class="fas fa-long-arrow-alt-right"></i></a>
+        <div class="row justify-content-center">
+            <div class="col-xl-12 col-lg-10 col-md-8">
+                <div class="section-title-2 text-center">
+                    <h2>Deep Dives into the Stories, Strategies, and Trends Driving the Digital World</h2>
+                    <p>Tips & Trends to Stay Ahead</p>
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-6">
-                <div class="part-cta">
-                    <a href="https://html.themexriver.com/murtes/murtes/about.html#" class="cta-button">CALL FOR ADVICE NOW</a>
-                    <h2>To make requests
-                        for further information,
-                        contact us via our social
-                        channels.</h2>
-                </div>
-            </div>
+        </div>
+        <div class="row">
+            @foreach ($blogData as $blog)                
+                <div class="col-xl-4 col-lg-4 col-md-6 aos-init mb-4">
+                    <div class="card blog-card" style="min-height: 30.5rem;">
+                        <img src="{{ asset('images/blogs/'.$blog->image) }}" class="card-img-top" alt="Blog Image" style="height: 247px; width: auto; object-fit: cover;">
+                        <div class="card-body">
+                            <h3 class="card-title">{{$blog->title}}</h3>                            
+                            <p class="card-text">{{ \Illuminate\Support\Str::words($blog->content, 10, '...') }}</p>
+                            
+                        </div>
+                        <div class="card-meta card-footer d-flex justify-content-between align-items-center p-3">
+                            <span><i class="fas fa-user"></i> By {{$blog->name}}</span>
+                            <span><i class="far fa-calendar-alt"></i> 20.05.2019</span>
+                        </div>            
+                    </div>
+                </div>                             
+            @endforeach
 
+            {{-- data-aos="fade-up" data-aos-offset="300"
+                data-aos-duration="2000" data-aos-easing="ease-in-sine" --}}
+            
         </div>
     </div>
-</div>
-<!-- support end -->
-
 
 
 

@@ -134,7 +134,7 @@
     line-height: 52px;
     color: #222222;
     margin-bottom: 23px;
-    margin-top: -10px; }
+    margin-top: 0px; }
     .section-title-2 h2 .special {
       color: #0064eb; }
   .section-title-2 p {
@@ -541,7 +541,7 @@ a i {
 }
 
 img {
-  max-width: 100%; }
+  width: 100%; }
 
 /*input and button type focus outline disable*/
 input[type="text"]:focus,
@@ -1019,7 +1019,7 @@ ul {
 
 .header-3 {
   position: absolute;
-  z-index: 55;
+  z-index: 10000;
   left: 0;
   top: 0;
   width: 100%;
@@ -4735,6 +4735,7 @@ ul {
   background: #f6fcff;
   padding: 30px 30px 0;
   border: 1px solid #e8f3fd;
+  margin-top: 400px;
   border-radius: 5px; }
   .choosing-reason-about-page .single-reason {
     background: #fff;
@@ -4759,7 +4760,7 @@ ul {
 .service-service-page {
   padding: 120px 0; }
   .service-service-page .part-img img {
-    width: 100%; }
+    width: 70%; }
   .service-service-page .part-text {
     margin-left: -50px; }
     .service-service-page .part-text h2 {

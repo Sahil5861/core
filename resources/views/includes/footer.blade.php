@@ -1,4 +1,9 @@
 <!-- footer begin -->
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
 <div class="footer footer-2">
     <div class="container">
         <div class="row justify-content-between">
@@ -16,16 +21,16 @@
                     <h3>Company</h3>
                     <ul>
                         <li>
-                            <a href="#">Our Team</a>
+                            <a href="{{ route('home') }}#our-team">Our Team</a>
                         </li>
                         <li>
-                            <a href="#">Our Projects</a>
+                            <a href="{{ route('our-work') }}">Our Projects</a>
                         </li>
                         <li>
-                            <a href="#">Our Services</a>
-                        </li>
+                            <a href="{{ route('about-us') }}">About Us</a>
+                        </li> 
                         <li>
-                            <a href="#">Our Blogs</a>
+                            <a href="{{ route('contact-us') }}">Contact Us</a>
                         </li>                        
                     </ul>
                 </div>
@@ -33,23 +38,16 @@
 
             <div class="col-xl-2 col-lg-2">
                 <div class="links-widget">
-                    <h3>Product</h3>
+                    <h3>Services</h3>
                     <ul>
-                        <li>
-                            <a href="https://html.themexriver.com/murtes/murtes/index-5.html#">Features</a>
-                        </li>
-                        <li>
-                            <a href="https://html.themexriver.com/murtes/murtes/index-5.html#">Pricing</a>
-                        </li>
-                        <li>
-                            <a href="https://html.themexriver.com/murtes/murtes/index-5.html#">Customers</a>
-                        </li>
-                        <li>
-                            <a href="https://html.themexriver.com/murtes/murtes/index-5.html#">Page Builder</a>
-                        </li>
-                        <li>
-                            <a href="https://html.themexriver.com/murtes/murtes/index-5.html#">What's new</a>
-                        </li>
+                        <li><a  href="{{route('services')}}">Android App Development</a></li>
+                        <li><a  href="{{route('services')}}">Hybrid App Development</a></li>
+                        <li><a  href="{{route('services')}}">Web Development</a></li>
+                        <li><a  href="{{route('services')}}">TV App Development</a></li>
+                        <li><a  href="{{route('services')}}">Cloud Solution Service</a></li>
+                        <li><a  href="{{route('services')}}">iOS App Development</a></li>
+                        <li><a  href="{{route('services')}}">UI/UX Design</a></li>
+                        <li><a  href="{{route('services')}}">DevOps Service</a></li>   
                     </ul>
                 </div>
             </div>

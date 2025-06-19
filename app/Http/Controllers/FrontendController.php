@@ -46,8 +46,9 @@ class FrontendController extends Controller
     {
         return view('frontend.our_work',$this->data);
     }
-     public function client_details()
+     public function client_details(Request $request, $id)
     {
+        $this->data['client'] = Project::where('id', $id)->first();
         return view('frontend.client_details',$this->data);
     }
 
@@ -70,16 +71,17 @@ class FrontendController extends Controller
     
     public function blog()
     {   
-        return view('blog',$this->data);
+        $this->data['blogs_name'] = Blog::where('status', 1)->pluck('title');
+        return view('frontend.blog',$this->data);
     }
     public function blog_dt($id)
     {
         $blog=Blog::where('id',$id)->get();
-        return view('blog_details',compact('blog'),$this->data);
+        return view('frontend.blog_details',compact('blog'),$this->data);
     }
     public function blog_details()
     {
-        return view('blog_details',$this->data);
+        return view('frontend.blog_details',$this->data);
     }
     public function Search_blogs(Request $request)
     {

@@ -240,6 +240,7 @@
       flex-wrap: wrap;    
       padding: 20px;
       margin-top: 270px;
+      margin-bottom: 75px;
       min-height: 230px;
       /* background: rgba(0, 00, 0, 0.5) */
     }
@@ -308,6 +309,37 @@
         overflow: hidden;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
+    @keyframes levitate {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px); /* move up by 15px */
+    }
+    }
+
+    .levitate {
+    animation: levitate 3s ease-in-out infinite;
+    }
+     .bg-video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(107, 95, 175, 0.5); /* #6B5FAF with 50% opacity */
+        z-index: 1;
+    }
+
 
         
 
@@ -316,13 +348,18 @@
 @section('section')
 <!-- breadcrumb begin -->
 <div class="breadcrumb-murtes" style="background: url(../images/contact-us.png) no-repeat center center;">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="{{asset('images/contact_banner.mp4')}}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-xl-6 col-lg-6">
                <div class="typewriter-container">
-                    <h4 style="color:#fff">Talk to Us—Innovation Begins with a Conversation</h4>
-                    <h1 class="static-text"style="color:#fff">Let's talk—your ideas matter!</h1>        
-                    <h1 class="typewriter-text" style="color:#fff" id="typewriter"></h1>
+                    <h4 style="color:#000000">Talk to Us—Innovation Begins with a Conversation</h4>
+                    <h1 class="static-text"style="color:#000000">Let's talk—your ideas matter!</h1>        
+                    <h1 class="typewriter-text" style="color:#000000" id="typewriter"></h1>
                 </div> 
             </div>
         </div>
@@ -380,7 +417,7 @@
     type();
 </script>
 <!-- breadcrumb end -->
-
+@include('includes.wave')
 <!-- contact begin -->
 <div class="contact">
     <div class="container">
@@ -390,7 +427,7 @@
                     <div class="row">
                         <div class="col-xl-5 col-lg-5">
                             <div class="part-img-12">
-                                    <img src="{{asset('images/img12.gif')}}" alt="" class="main-img aos-animate">
+                                    <img src="{{asset('images/img12.gif')}}" alt="" class="main-img aos-animate levitate">
                             </div>
                         </div>
                         <div class="col-xl-12 col-lg-12 col-md-4">

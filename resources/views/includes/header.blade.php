@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-7 d-xl-block d-lg-block d-flex align-items-center">
                         <div class="logo">
-                            <a href="https://html.themexriver.com/murtes/murtes/index-3.html">
+                            <a href="{{route('home')}}">
                                 {{-- <img src="{{asset('frontend/assets/images/favicons/cti-file-01.png')}}" alt=""> --}}
                                 <img src="{{asset('frontend/assets/images/logo.png')}}" alt="" width="180px">
                             </a>
@@ -67,14 +67,17 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('our-work')}}">Our Work</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('blog')}}">Blogs</a>
+                                    </li>
                                     
-                                    <li class="nav-item dropdown">
+                                    {{-- <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="https://html.themexriver.com/murtes/murtes/about.html#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/blog.html">Blog</a>
                                             <a class="dropdown-item" href="https://html.themexriver.com/murtes/murtes/blog-details.html">Blog Details</a>
                                         </div>
-                                    </li>
+                                    </li> --}}
 
                                     <li class="nav-item {{ request()->routeIs('contact-us') ? 'active' : '' }}">
                                         <a class="nav-link" href="{{route('contact-us')}}">Contact Us</a>

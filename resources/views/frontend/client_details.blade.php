@@ -304,16 +304,19 @@
     }
 
 </style>
+
 @section('section')
 <!-- breadcrumb begin -->
-<div class="breadcrumb-murtes" style="background: url(../images/ak_banner.png) center center no-repeat">
+<div class="breadcrumb-murtes" style="background: url(../images/project/our_client-BANNER.png) center center no-repeat">
     <div class="container">
        <div class="row">
-            <div class="col-xl-6 col-lg-6">
-                <div class="typewriter-container">\
-                    <h1 class="static-text"style="color:#fff">Ak Builtrade pvt. ltd.</h1>        
-                   
+            <div class="col-xl-6 col-lg-6 d- xl-flex d-lg-flex d-block align-items-center">
+                <div class="typewriter-container">
+                    <h1 class="static-text"style="color:#fff">{{$client->title}}</h1>  
                 </div> 
+                <div>
+                     <img src="{{asset('images/project/'.$client->image)}}" alt="" style="width: 20vw; margin-left: 85%;"> 
+                </div>
                 {{-- <div class="breadcrumb-content">
                     <h2 style="width: 1100px; font-weight: 400; font-size: 2em">We craft smart, human-focused IT solutions to drive business success.</h2> --}}
                     <ul>
@@ -392,7 +395,7 @@
                         <div class="col-lg-4">
                             <img src="{{asset('images/ceo.jpg')}}" alt="Saddam Husain" width="150">
                         </div>
-                        <div class="col-lg-6" style="display: flex; flex-direction:column; justify-content:center;">
+                        <div class="col-lg-6" style="display:  xl-flex d-lg-flex d-block align-items-center">; flex-direction:column; justify-content:center;">
                             <h5>Saddam Husain</h5>
                             <h6>Founder CEO</h6>
                         </div>
@@ -447,13 +450,13 @@
         <div class="row justify-content-xl-between justify-content-lg-between justify-content-center">
             <div class="col-xl-6 col-lg-6 col-md-9">
                 <div class="part-img">
-                    <img src="{{asset('images/project/ak4.png')}}" alt="">
+                    <img src="{{asset('images/project/'.$client->image)}}" alt="">
                 </div>
             </div>
             <div class="col-xl-5 col-lg-5 col-md-9">
                 <div class="part-text">
-                    <h2>Ak Builtrade pvt. ltd.</h2>
-                    <p>About this app Ak Buildtrade- Brand of packaged raw material seller. Protect our environment of Delhi & NCR from pollution. Assured high quality. We are a manufacturer of open and packaged building materials such as Sand, Dust, Aggregate, etc. We supply material to Distributors and retailers. Our packaged material is designed keeping the environment in mind. Our Specialities: safe & clean environment, no wastage, Assured high quality, easy to handle & use. Build a strong future with us.</p>
+                    <h2>{{$client->title}}</h2>
+                    <p>{{$client->description}}</p>
                 </div>
             </div>
         </div>
@@ -464,11 +467,25 @@
     <div class="section-title">
         <h2 class="text-center">Technologies Used to Achieve Perfection in This Project</h2>
       </div>
+
+      <?php 
+        $technologia = explode(',', $client->projectTechnology);
+      ?>
       <div class="container p-3 w-50">
         <div class="row justify-content-center">
+
+            @foreach ($technologia as $tech)
+            <?php 
+                $techdata = \App\Models\Technology::where('name', $tech)->first();
+            ?>
             <div class="col-lg-2 text-center">
-                <img src="https://img.icons8.com/ios-filled/100/fa314a/laravel.png" class="tech-logo" alt="Laravel"/> 
-                <p class="tech-name mt-2">Laravel</p>
+                <img src="{{$techdata->image}}" class="tech-logo" alt="{{$client->projectTechnology}}"/> 
+                <p class="tech-name mt-2">{{$techdata->name}}</p>
+            </div>    
+            @endforeach
+            {{-- <div class="col-lg-2 text-center">
+                <img src="https://img.icons8.com/ios-filled/100/fa314a/laravel.png" class="tech-logo" alt="{{$client->projectTechnology}}"/> 
+                <p class="tech-name mt-2">{{$client->projectTechnology}}</p>
             </div>
             <div class="col-lg-2 text-center">
                 <img src="https://img.icons8.com/color/150/000000/html-5--v1.png" class="tech-logo" alt="HTML"/>
@@ -481,7 +498,7 @@
             <div class="col-lg-2 text-center">
                 <img src="https://img.icons8.com/color/150/000000/css3.png" class="tech-logo" alt="CSS"/>
                 <p class="tech-name mt-2">CSS</p>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
