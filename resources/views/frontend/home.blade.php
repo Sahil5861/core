@@ -28,7 +28,7 @@ html {
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             color: #000;
             transition: 0.3s ease-in-out;
-            min-width: 25vw;
+            /* min-width: 25vw; */
             padding: 20px;
             margin: 0;
         }
@@ -228,7 +228,7 @@ html {
 
     @media (max-width: 768px) {
       .banner2 {
-        background: url('../images/banner-5.jpg') no-repeat center center/cover;
+        height: 33vh;
         justify-content: center;
         padding: 20px;
         text-align: center;
@@ -242,10 +242,63 @@ html {
         padding: 20px;
       }
       .banner-content2 h1{
-        font-size: 24px !important;
+        font-size: 20px !important;
+      }
+      .typewriter-container {
+        padding: 0px;
+      }
+      .button-btn {
+        margin-left: 3vw !important;
+        bottom: 7px !important;
+       
+      }
+      .button-btn-text {
+        height: 28px !important;
+        line-height: 30px !important;
+      }
+      a.btn-murtes {
+        padding: 0px 7px !important;
+      }
+      .owl-carousel .owl-nav .owl-prev {
+        display: none !important;            
+      }
+      .owl-carousel .owl-nav .owl-next {
+        display: none !important;            
+      }
+      .tech-custom {
+        display: flex;
+        flex-direction: column;
+
+      }
+      .tech-text {
+        text-align: center;
+        margin-left:  7vw;
+      }
+      .tech-text h3 {
+        font-size: 20px !important;
       }
 
     }
+
+
+
+    @media (min-width: 1450px) {
+        .blog .container {
+            max-width: 1400px;
+        }
+        .card-container {
+            grid-template-columns: repeat(4, 1fr); /* Adjust number of columns */
+            gap: 30px; /* Increase spacing */
+        }
+    }
+    
+
+
+
+
+
+
+
     @keyframes levitate {
     0%, 100% {
         transform: translateY(0);
@@ -291,7 +344,7 @@ html {
         </div>
     </div>
 </div> --}}
-
+@include('includes.socials')
 <div class="banner2">
     <video autoplay muted loop playsinline class="bg-video">
       <source src="{{asset('images/home_video.mp4')}}" type="video/mp4">
@@ -305,8 +358,8 @@ html {
         <h1 class="typewriter-text" id="typewriter"></h1>
       </div>              
     </div>
-    <div class="buttons banner-btn">
-        <a href="#"class="banner-button btn-murtes">Explore more <i class="fas fa-long-arrow-alt-right"></i></a>                        
+    <div class="buttons banner-btn button-btn">
+        <a href="{{route('about-us')}}"class="banner-button btn-murtes button-btn-text">Explore more <i class="fas fa-long-arrow-alt-right"></i></a>                        
     </div>
 </div>
 
@@ -322,8 +375,7 @@ html {
       "TV App Development",
       "Cloud Solution Service",
       "iOS App Development",
-      "UI/UX Design",
-      "DevOps Service"
+      "UI/UX Design"
     ];
 
     let currentPhraseIndex = 0;
@@ -369,18 +421,18 @@ html {
 <!-- banner end -->
 
 <!-- about begin -->
-<div class="about-5">
+<div class="about-5 p-5">
     <div class="container">
         <div class="row justify-content-xl-between justify-content-lg-between justify-content-center">
             <div class="col-xl-6 col-lg-10 col-md-10">
                 <div class="part-text">
                     <h2>
                         <span class="special">
-                            MORE THAN 9 YEARS OF EXPERIENCE
+                            MORE THAN 5 YEARS OF EXPERIENCE
                         </span>
                         IN TURNING IDEAS INTO DIGITAL REALITIES
                     </h2>
-                    <p>- With 9+ years of expertise, we transform ideas into powerful digital solutions. From software development to cloud integration and digital transformation, we deliver tailored technology that drives growth and success.</p>
+                    <p>- With 5+ years of expertise, we transform ideas into powerful digital solutions. From software development to cloud integration and digital transformation, we deliver tailored technology that drives growth and success.</p>
                     <p>-With years of expertise, we empower businesses through innovation and excellence, crafting solutions that align with their goals. Our team turns challenges into opportunities, driving a smarter, more connected future while redefining possibilities.</p>
                 </div>
             </div>
@@ -393,15 +445,21 @@ html {
     </div>
 </div>
 <!-- about end -->
-
+<style>
+    .circle-width{
+        @media (min-width: 1200px) {
+            max-width: 1500px;
+        }
+    }
+</style>
 <!-- statics begin -->
-<div class="statics statics-5">
-    <div class="container">
-        <div class="row">
+<div class="statics statics-5 mb-3">
+    <div class="container circle-width">
+        <div style='gap: 5.5vw; margin-left: 10%;' class="row">
             <div class="col-xl-3 col-lg-3 aos-init" data-aos="new-animation" data-aos-delay="100"
                 data-aos-duration="500">
                 <div class="single-statics">
-                    <span class="number"><span class="counter">9</span>+</span>
+                    <span class="number"><span class="counter">5</span>+</span>
                     <span class="title">Years of experience</span>
                     <div class="bg-icon">
                         <img src="{{asset('images/timetable.svg')}}"
@@ -412,15 +470,15 @@ html {
             <div class="col-xl-3 col-lg-3 aos-init" data-aos="new-animation" data-aos-delay="100"
                 data-aos-duration="1000">
                 <div class="single-statics">
-                    <span class="number"><span class="counter">{{$project->count()}}</span>+</span>
-                    <span class="title">Total project</span>
+                    <span class="number"><span class="counter">100</span>+</span>
+                    <span class="title">Total project<br>Delivered</span>
                     <div class="bg-icon">
                         <img src="{{asset('images/contract.svg')}}"
                             alt="">
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 aos-init" data-aos="new-animation" data-aos-delay="100"
+            {{-- <div class="col-xl-3 col-lg-3 aos-init" data-aos="new-animation" data-aos-delay="100"
                 data-aos-duration="1500">
                 <div class="single-statics">
                     <span class="number"><span class="counter">35</span>+</span>
@@ -430,12 +488,12 @@ html {
                             alt="">
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-xl-3 col-lg-3 aos-init" data-aos="new-animation" data-aos-delay="100"
                 data-aos-duration="2000">
                 <div class="single-statics">
-                    <span class="number"><span class="counter">{{$clients->count()}}</span>+</span>
-                    <span class="title">Happy clients</span>
+                    <span class="number"><span class="counter">80</span>+</span>
+                    <span class="title">Happy Clients<br>WorldWide</span>
                     <div class="bg-icon">
                         <img src="{{asset('images/happiness.svg')}}"
                             alt="">
@@ -461,6 +519,11 @@ html {
                 </div>
             </div>
         </div>
+{{-- 
+        <?php 
+        
+            $this->data['services'] =OurService::where('status',1)->get();  
+        ?> --}}
 
         <div class="owl-carousel service-crausel owl-theme">
             @foreach ($services as $item)                
@@ -469,7 +532,7 @@ html {
                         <div class="card-content">
                             <h3>{{$item->title}}</h3>
                             <p>{{$item->description}}</p>
-                            <a href="{{route('service.details', $item->id)}}" class="details">details →</a>
+                            <a href="{{route('service.details', $item->slug)}}" class="details">details →</a>
                         </div>
                     </div>
                 </div>
@@ -480,7 +543,7 @@ html {
 <!-- service end -->
 
 <!-- team begin -->
-<div class="team-5" id="our-team">
+<div class="team-5 p-5" id="our-team">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-12 col-lg-8 col-md-8">
@@ -493,7 +556,7 @@ html {
         </div>
         <div class="row">
             @foreach ($team as $item)                
-                <div class="col-xl-3 col-lg-3 col-sm-6 aos-init" data-aos="murtes-animation" data-aos-offset="300"
+                <div class="col-xl-3 col-lg-3 col-md-6 col-6 aos-init" data-aos="murtes-animation" data-aos-offset="300"
                     data-aos-duration="500" data-aos-easing="ease-in-sine">
                     <div class="single-member">
                         <div class="part-img">
@@ -503,13 +566,13 @@ html {
                                 <span class="name">{{$item->name}}</span>
                                 <span class="position">{{$item->designation}}</span>
                                 <div class="social">
-                                    <ul>
+                                    {{-- <ul>
                                         <li> <a href="#"><i class="fab fa-facebook-f"></i></a></li>
 
                                         <li><a href="#"><i class="fab fa-instagram"></i></a></li>
 
                                         <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>
@@ -517,7 +580,7 @@ html {
                 </div>            
             @endforeach
         </div>
-       
+            
     </div>
 </div>
 <!-- team end -->
@@ -527,7 +590,7 @@ html {
 <!-- support end -->
 
 <!-- project begin -->
-<div class="project project-3">
+<div class="project project-3 p-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-12 col-lg-10 col-md-8">
@@ -545,26 +608,47 @@ html {
     </div>
     <div class="container-fluid this-container">
         <div class="part-project">
-            <div class="owl-carousel project-crausel owl-theme owl-loaded owl-drag">
-                @foreach ($project as $item)                    
-                    <div class="item">                        
-                        <div class="card project-card" style="min-height: 30.4rem;">
-                            <img src="{{asset('images/project/'.$item->image)}}" width="200" height="200" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">{{$item->title}}</h5>
-                              <p class="card-text">
-                                {{ \Illuminate\Support\Str::words($item->description, 10, '...') }}
-                            </p>                            
-                              <a href="#" class="btn btn-primary">details →</a>
+            <!-- Wrapper div with max-width for larger screens -->
+            <div class="project-wrapper" style="max-width: 1170px; margin: 0 auto;">
+                <div class="owl-carousel project-crausel owl-theme owl-loaded owl-drag">
+                    @foreach ($project as $item)                    
+                        <div class="item">                        
+                            <div class="card project-card" style="min-height: 30.4rem;">
+                                <div style="height: 200px; display: inline-flex; width: auto; margin: auto;">
+                                    <img src="{{asset('images/project/'.$item->image)}}" style="margin: auto;height: 100%;width:100%;"  class="card-img-top" alt="...">
+                            
+                                </div>
+                                <div class="card-body">
+                                <h5 class="card-title">{{$item->title}}</h5>
+                                <p class="card-text">
+                                    {!! \Illuminate\Support\Str::words($item->description, 10, '...') !!}
+                                </p>                            
+                                <a href="{{route('client-details',$item->id)}}" class="btn btn-primary">details →</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
-
         </div>
     </div>
 </div>
+<style>
+    /* Media query for screens wider than 1200px */
+    @media (min-width: 1200px) {
+        .project-wrapper {
+            max-width: 1170px !important;
+            margin: 0 auto !important;
+        }
+    }
+
+    /* For smaller screens, allow full width */
+    @media (max-width: 1199px) {
+        .project-wrapper {
+            max-width: 100% !important;
+        }
+    }
+</style>
 <!-- project end -->
 
 <!-- testimonial begin -->
@@ -607,7 +691,7 @@ html {
 <!-- testimonial end -->
 
 <!-- blog begin -->
-<div class="blog blog-3" style="padding: 0; padding-bottom:100px;">
+<div class="blog blog-3" style="padding: 0;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-12 col-lg-10 col-md-8">
@@ -617,20 +701,28 @@ html {
                 </div>
             </div>
         </div>
+        <style>
+            .blog-text{
+                font-size: 1.3rem !important;
+            }
+        </style>
         <div class="row">
             @foreach ($blogData as $blog)                
                 <div class="col-xl-4 col-lg-4 col-md-6 aos-init mb-4">
-                    <div class="card blog-card" style="min-height: 30.5rem;">
+                    <div class="card blog-card" style="min-height: 35rem; max-height: 36rem;">
                        <img src="{{ asset('images/blogs/'.$blog->image) }}" class="card-img-top" alt="Blog Image" style="height: 247px; width: auto; object-fit: cover;">
                         <div class="card-body">
-                            <h3 class="card-title">{{$blog->title}}</h3>                            
+                            <h3 class="card-title blog-text">{{$blog->title}}</h3>                            
                             <p class="card-text">{{ \Illuminate\Support\Str::words($blog->content, 10, '...') }}</p>
                             
                         </div>
                         <div class="card-meta card-footer d-flex justify-content-between align-items-center p-3">
                             <span><i class="fas fa-user"></i> By {{$blog->name}}</span>
                             <span><i class="far fa-calendar-alt"></i> 20.05.2019</span>
-                        </div>            
+                        </div>  
+                        <div class="card-footer text-center">
+                            <a href="{{ route('blog-details',$blog->slug) }}" class="btn btn-primary">Details</a>
+                        </div>          
                     </div>
                 </div>                             
             @endforeach
@@ -642,8 +734,8 @@ html {
     </div>
     <div class="container-fluid bg-primary text-white">
         <div class="d-flex justify-content-center">
-            <div class="small-contact d-flex align-items-center text-center p-4">
-                <div class="justify-content-start align-items-start me-custom">
+            <div class="small-contact d-flex align-items-center text-center p-4 tech-custom">
+                <div class="justify-content-start align-items-start me-custom tech-text">
                     <h3 class="fw-bold">Have a Question? Get Expert Answers!</h3>
                     <p>Submit your query and our experts will get back to you with the best solutions.</p>
                 </div>
@@ -704,8 +796,13 @@ html {
                     items: 2
                 },
                 1000: {
-                    items: 4
+                    items: 3
+                },
+                1400: {
+                    items: 3
                 }
+
+
             }
         });
         

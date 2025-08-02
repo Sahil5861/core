@@ -245,7 +245,7 @@
       /* background: rgba(0, 00, 0, 0.5) */
     }
     .typewriter-container h1{
-        font-size: 42px !important;
+        font-size: 42px;
     }
 
     .static-text {
@@ -339,6 +339,110 @@
         background-color: rgba(107, 95, 175, 0.5); /* #6B5FAF with 50% opacity */
         z-index: 1;
     }
+    @media (max-width: 768px) {
+        .banner2 {
+            background: url('../images/banner-5.jpg') no-repeat center center/cover;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+        .banner-content2 {
+            top: 90%;
+            left: 10px;        
+            font-size: 24px;
+            padding: 20px;
+        }
+        .banner-content2 h1{
+            font-size: 24px !important;
+        }
+        .typewriter-container {
+            min-height: 30vh !important;
+            margin-top: 10vh !important;
+            margin-bottom: 1vh !important;
+            max-width: 80vw !important;
+        }
+        .head-text {
+            font-size: 1.1rem !important;
+        }
+        .head-sub-text {
+            font-size: 1rem !important;
+        }
+        .head-head {
+            padding-left: 8px !important;
+        }
+        .project {
+            padding: 0px 0px !important;
+        }
+        .card-img-top {
+            padding-top: 10px;
+        }
+        
+        /* Blog banner specific responsive styles */
+        .breadcrumb-murtes .col-xl-6 {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+        }
+        .breadcrumb-murtes .static-text {
+            font-size: 1.1rem !important;
+        }
+        .breadcrumb-murtes .typewriter-container {
+            flex: 1 !important;
+            margin-right: 15px !important;
+        }
+        .breadcrumb-murtes img {
+            width: 25vw !important;
+            margin-right: 0 !important;
+            flex-shrink: 0 !important;
+        }
+        .levitate-img{
+            width: 70% !important;
+        }
+        .contact .contact-address .single-address .part-icon img{
+            height: 50px !important;
+        }
+        .contact .contact-address .single-address .part-icon span.title{
+            font-size: 1.2rem !important;
+        }
+        .contact .contact-address .single-address .part-text p{
+            font-size: 1rem !important;
+        }
+        .contact .contact-address .single-address{
+            padding: 10px !important;
+        }
+        .call-img{
+            left: -16vw !important;
+        }
+        .add-img{
+            left: -6vw !important;
+        }
+        .add-text{
+            left: -12vw !important;
+        }
+        .call-text{
+            margin-left: -6em !important;
+        }
+        .call-no p {
+            margin-left: -1.5em !important;
+        }
+        .add-no p {
+            margin-left: -2em !important;
+        }
+        .contact .contact-form{
+            margin-top: 5em !important;
+        }
+        .contact .contact-form span.subtitle{
+            margin-bottom: -1em !important;
+        }
+        .contact .contact-form{
+            padding: 15px 15px !important;
+        }
+        .contact .contact-form form textarea{
+            height: 100px !important;
+        }
+      
+}
+    
 
 
         
@@ -358,8 +462,8 @@
             <div class="col-xl-6 col-lg-6">
                <div class="typewriter-container">
                     <h4 style="color:#000000">Talk to Us—Innovation Begins with a Conversation</h4>
-                    <h1 class="static-text"style="color:#000000">Let's talk—your ideas matter!</h1>        
-                    <h1 class="typewriter-text" style="color:#000000" id="typewriter"></h1>
+                    <h1 class="static-text head-text"style="color:#000000">Let's talk—your ideas matter!</h1>        
+                    <h1 class="typewriter-text head-text" style="color:#000000" id="typewriter"></h1>
                 </div> 
             </div>
         </div>
@@ -426,85 +530,99 @@
                 <div class="contact-address">
                     <div class="row">
                         <div class="col-xl-5 col-lg-5">
-                            <div class="part-img-12">
-                                    <img src="{{asset('images/img12.gif')}}" alt="" class="main-img aos-animate levitate">
+                            <div class="part-img-12 levitate-img">
+                                <img src="{{asset('images/img12.gif')}}" alt="" class="main-img aos-animate levitate levitate-img">
                             </div>
                         </div>
+                        
                         <div class="col-xl-12 col-lg-12 col-md-4">
-                            <div class="single-address">
+                            <div class="single-address single-address-email">
                                 <div class="part-icon">
                                     <img src="images/notification.svg" alt="">
-                                    <span class="title">Email</span>
+                                    <span class="title">Email:</span>
                                 </div>
                                 <div class="part-text">
                                     <p>
-                                        <a href="mailto:hello@gmail.com?subject=Hello%20There&body=I%20would%20like%20to%20get%20in%20touch." class="email-link">
-                                            hello@gmail.com
-                                        </a><br>
-                                        <a href="mailto:support@gmail.com?subject=Need%20Support&body=Please%20assist%20me%20with..." class="email-link">
-                                            support@gmail.com
-                                        </a>
-                                    </p>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-xl-12 col-lg-12 col-md-4">
-                            <div class="single-address">
-                                <div class="part-icon">
-                                    <img src="images/hierarchy.svg" alt="">
-                                    <span class="title">Cell</span>
-                                </div>
-                                <div class="part-text">
-                                    <p>
-                                        <a href="https://wa.me/917065392005" class="whatsapp-link" target="_blank">
-                                            +91 706 539 2005
-                                        </a><br>
-                                        <a href="https://wa.me/88467956735" class="whatsapp-link" target="_blank">
-                                            +88 467 956 735
+                                        <a href="mailto:contact@coretechinfo.com?subject=Need%20Support&body=Please%20assist%20me%20with..." class="email-link">
+                                            contact@coretechinfo.com
                                         </a>
                                     </p>
                                 </div>
                             </div>
                         </div>
 
+                        <style>
+                           
+                           
+                        </style>
+                        
                         <div class="col-xl-12 col-lg-12 col-md-4">
                             <div class="single-address">
                                 <div class="part-icon">
-                                    <img src="images/start.svg" alt="">
-                                    <span class="title">Add:</span>
+                                    <img class="call-img" src="images/hierarchy.svg" alt="">
+                                    <span class="title call-text">Cell:</span>
                                 </div>
-                                <div class="part-text">
+                                <div class="part-text call-no">
+                                    <p>
+                                        <a href="https://wa.me/918285467978" class="whatsapp-link" target="_blank">
+                                            +91 828 546 7978
+                                        </a><br>
+                                        <a href="https://wa.me/919643044561" class="whatsapp-link" target="_blank">
+                                            +91 964 304 4561
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-4">
+                            <div class="single-address">
+                                <div class="part-icon">
+                                    <img class="add-img"src="images/start.svg" alt="">
+                                    <span class="title add-text">Add:</span>
+                                </div>
+                                <div class="part-text add-no">
                                     <p>
                                         <a href="https://www.google.com/maps/search/?api=1&query=62+Pocket-25+Sector-24+Rohini+Delhi+110085" class="map-link" target="_blank">
                                             Ground Floor, 62, <br>
-                                             Pocket-25, Sector-24,<br>
+                                            Pocket-25, Sector-24,<br>
                                             Rohini, Delhi-110085.
                                         </a>
                                     </p>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
             <div class="col-xl-5 col-lg-5">
                 <div class="contact-form">
+                    @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+                    @if(session('error'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ session('error') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+
                     <span class="subtitle">GET IN TOUCH</span>
                     <h4>Need a better quote
                         for our service?</h4>
-                    <form>
-                        <input type="text" placeholder="Enter your Name">
-                        <input type="email" placeholder="Your Contact Number">
-                        <input type="text" placeholder="Your Email Address">
-                        <textarea placeholder="Message...."></textarea>
-                    </form>
-                    <button type="submit" class="btn-murtes-6">Submit Now <i
+                    <form method="post" action="{{route('contact-us-save')}}">
+                        {{ csrf_field() }}
+                        <input name="name" required="" type="text" placeholder="Enter your Name">
+                        <input name="mobile" required type="tel" placeholder="Your Contact Number" maxlength="10">
+                        <input name="email" required type="email" placeholder="Your Email Address">
+                        <textarea name="message" required placeholder="Message...."></textarea>
+                        <button type="submit" class="btn-murtes-6">Submit Now <i
                             class="fas fa-long-arrow-alt-right"></i></button>
+                    </form>
+                    
                 </div>
             </div>
         </div>

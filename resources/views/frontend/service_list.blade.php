@@ -1,5 +1,5 @@
 @extends('layouts.frontend_default')
-{{-- <style>
+<style>
     .owl-carousel .item {
             padding: 5px;
         }
@@ -129,7 +129,7 @@
     /* .owl-prev i, .owl-next i{
         line-height: 4;
     } */
-</style> --}}
+</style>
 
 <style>
     /* section */
@@ -147,52 +147,52 @@
     background-attachment: fixed; /* Keeps background fixed */
     color: white;
     overflow: hidden;
-}
+    }
 
-/* Black Overlay */
-.cta-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Adjust opacity (0.6) as needed */
-    z-index: 1;
-}
+    /* Black Overlay */
+    .cta-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); /* Adjust opacity (0.6) as needed */
+        z-index: 1;
+    }
 
-.cta-content {
-    max-width: 800px;
-    margin: auto;
-    text-align: center;        
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    z-index: 2; /* Ensures content stays above overlay */
-}
+    .cta-content {
+        max-width: 800px;
+        margin: auto;
+        text-align: center;        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 2; /* Ensures content stays above overlay */
+    }
 
-.cta-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-}
+    .cta-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
 
-.thm-btn {
-    display: inline-block;
-    background-color: #ff6600;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
-}
+    .thm-btn {
+        display: inline-block;
+        background-color: #ff6600;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
 
-.thm-btn:hover {
-    background-color: #cc5200;
-}
+    .thm-btn:hover {
+        background-color: #cc5200;
+    }
 
-.ceo-badge {
+    .ceo-badge {
             position: absolute;
             bottom: 15px;
             left: -15px;
@@ -214,21 +214,40 @@
     .ceo-badge:hover{
         transform: translateX(20%);
     }
+    .bg-video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(107, 95, 175, 0.5); /* #6B5FAF with 50% opacity */
+        z-index: 1;
+    }
         
 
 </style>
 @section('section')
 <!-- breadcrumb begin -->
 <div class="breadcrumb-murtes" style="background: url(../images/about_us.png)">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="{{asset('images/service-list.mp4')}}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-xl-6 col-lg-6">
                 <div class="breadcrumb-content">
                     <h2>Our Services</h2>
-                    <ul>
-                        <li><a href="https://html.themexriver.com/murtes/murtes/about.html#">Home</a></li>
-                        <li>Service</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -268,7 +287,7 @@
         </div>
     </div>
 </div> --}}
-
+@include('includes.wave')
 
 <!-- service begin -->
 <div class="service-service-page">
@@ -276,7 +295,7 @@
         <div class="row justify-content-xl-between justify-content-lg-between justify-content-center">
             <div class="col-xl-6 col-lg-6 col-md-9">
                 <div class="part-img">
-                    <img src="{{asset('images/service-7.jpg')}}" alt="">
+                    <img src="{{asset('images/service-99.jpg')}}" alt="">
                 </div>
             </div>
             <div class="col-xl-5 col-lg-5 col-md-9">
@@ -284,9 +303,7 @@
                     <h2>We run all kinds of IT
                         services that vow your
                         success</h2>
-                    <p>We help transform the world most important businesses into
-                        that anticipate the agile unpredtable adapt rapidly disruption
-                        with high potential and high ambition.</p>
+                    <p>We help transform the world’s most important businesses into forward-thinking, adaptive powerhouses—organizations that anticipate change, thrive amid unpredictability, and respond swiftly to disruption. Guided by high ambition and empowered by high potential, we enable them to lead with agility, innovate with confidence, and shape the future of their industries.</p>
                 </div>
             </div>
         </div>
@@ -308,7 +325,7 @@
                         <div class="right">
                             <h3 class="service-title" style="height: 70px;">{{$service->title}}</h3>
                             <p class="service-content">{{$service->description}}</p>
-                            <a href="https://html.themexriver.com/murtes/murtes/service.html#" class="service-details-button">details <i class="fas fa-long-arrow-alt-right"></i></a>
+                            <a href="{{route('service.details', $service->slug)}}" class="service-details-button">details <i class="fas fa-long-arrow-alt-right"></i></a>
                         </div>
                     </div>
                 </div>            
@@ -332,94 +349,104 @@
         </div>
 
         <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="500">
-                <div class="single-reason">
-                    <div class="part-head">
-                        <span class="number">01</span>
-                    </div>
-                    <div class="part-body">
-                        <h3>Meeting with
-                                the customer
-                                </h3>
-                        {{-- <p>Collecting event old above shy bed favour income has stuff.</p> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="1000">
-                <div class="single-reason">
-                    <div class="part-head">
-                        <span class="number">02</span>
-                    </div>
-                    <div class="part-body">
-                        <h3>Work hard on
-                                the project</h3>
-                        {{-- <p>Collecting event old above shy bed favour income has stuff.</p> --}}
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="500">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">01</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Meeting with
+                                    the customer
+                                    </h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p> --}}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="1500">
-                <div class="single-reason">
-                    <div class="part-head">
-                        <span class="number">03</span>
-                    </div>
-                    <div class="part-body">
-                        <h3>We finish the
-                                project</h3>
-                        {{-- <p>Collecting event old above shy bed favour income has stuff.</p> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
-                <div class="single-reason">
-                    <div class="part-head">
-                        <span class="number">04</span>
-                    </div>
-                    <div class="part-body">
-                        <h3>Successfully
-                                launch project</h3>
-                        {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="1000">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">02</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Working hard and smartly on
+                                    the project</h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p> --}}
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="1500">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">03</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Finishing the
+                                    project
+                                with perfection</h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p> --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">04</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Successfully
+                                    launching project</h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">05</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Handing over the project to the customer</h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">06</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Getting thier feedback</h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">07</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Learning From Those feedbacks</h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
+                    <div class="single-reason">
+                        <div class="part-head">
+                            <span class="number">08</span>
+                        </div>
+                        <div class="part-body">
+                            <h3>Implementing those learnings to the next project</h3>
+                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 </div>
 <!-- choosing reason end -->
-
-
-
-
-
-<!-- support begin -->
-<div class="support support-3">
-    <div class="container">
-        <div class="row justify-content-xl-between justify-content-lg-between justify-content-center">
-            
-            <div class="col-xl-5 col-lg-5 col-md-8 d-xl-flex d-lg-flex d-block align-items-center">
-                <div class="part-text">
-                    <span class="phone-number">{{env('COMPANY_PHONE')}}</span>
-                    <p>But I must explain to you how all this mistaken
-                        denouncing praising pain was born and via us
-                        passing pain was born give you.</p>
-                    
-                    <a href="https://html.themexriver.com/murtes/murtes/about.html#" class="support-button">Contact now <i class="fas fa-long-arrow-alt-right"></i></a>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6">
-                <div class="part-cta">
-                    <a href="https://html.themexriver.com/murtes/murtes/about.html#" class="cta-button">CALL FOR ADVICE NOW</a>
-                    <h2>To make requests
-                        for further information,
-                        contact us via our social
-                        channels.</h2>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- support end -->
-
 
 
 
@@ -488,4 +515,3 @@
     </script>
     
 @endsection
-

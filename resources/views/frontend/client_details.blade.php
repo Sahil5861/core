@@ -240,7 +240,7 @@
       padding: 20px;
       margin-top: 200px;
       max-width: 70vw;
-      min-height: 315px;
+      max-height: 30px;
       /* background: rgba(0, 00, 0, 0.5) */
     }
     .typewriter-container h1{
@@ -300,31 +300,168 @@
       .banner-content2 h1{
         font-size: 24px !important;
       }
+      .banner{
+        height: 35vh !important;
+      }
+      .video-wrapper {
+        height: 25vh !important;
+      }
+      .banner .content .styled-title{
+        font-size: 2.5em !important;
+        text-align: center !important;
+        font-family: 'ICA Rubrik', sans-serif !important;
+        line-height: 1em !important;
+        color: #0000002d !important;
+        position: relative !important;
+        white-space: wrap !important;
+        mix-blend-mode: difference !important;
+        width: 72vw;
+      }
+      .service-service-page .part-text {
+        margin-left: 0px !important;
+      }
+
+
 
     }
+     .video-container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        /* Center the video if needed */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Styles */
+
+    /* Parent container with background color */
+    .video-wrapper {
+        position: relative;
+        width: 100vw;
+        height: 70vh;
+        background-color: #000; /* Background for rest of the area */
+        overflow: hidden;
+    }
+
+    .bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 100%);
+    }
+    .bg-video-2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 100%);
+    }
+    .bg-video-3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        clip-path: polygon(50% 0%, 50% 0%, 100% 100%, 25% 100%);
+    }
+
+
+     .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(107, 95, 175, 0); /* #6B5FAF with 50% opacity */
+        z-index: 1;
+    }
+    .banner {
+        position: relative;
+        height: 100vh;
+        background: transparent /* Optional, for contrast */
+    }
+
+    .banner .content {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner .content .styled-title {
+        font-family: 'ICA Rubrik', sans-serif;
+        font-size: 8em;
+        line-height: 1em;
+        color: #0000002d;
+        position: relative;
+        white-space: nowrap;
+
+        /* This makes text color adapt based on background */
+        mix-blend-mode: difference;
+    }
+
+
+    .banner .content .styled-title::after {
+        position: absolute;
+        inset: 0 0 0 0;
+        content: attr(data-content);
+        z-index: 2;
+        -webkit-text-stroke: 2px #d2d2d2;
+        color: transparent;
+    }
+    .banner:after {
+        position: absolute !important;
+        content: '' !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        opacity: 0.1 !important;
+        background: #222222 !important;;
+        opacity: .45 !important;
+        z-index: -1 !important;
+    }
+
 
 </style>
 
 @section('section')
 <!-- breadcrumb begin -->
-<div class="breadcrumb-murtes" style="background: url(../images/project/our_client-BANNER.png) center center no-repeat">
-    <div class="container">
-       <div class="row">
-            <div class="col-xl-6 col-lg-6 d- xl-flex d-lg-flex d-block align-items-center">
-                <div class="typewriter-container">
-                    <h1 class="static-text"style="color:#fff">{{$client->title}}</h1>  
-                </div> 
-                <div>
-                     <img src="{{asset('images/project/'.$client->image)}}" alt="" style="width: 20vw; margin-left: 85%;"> 
-                </div>
-                {{-- <div class="breadcrumb-content">
-                    <h2 style="width: 1100px; font-weight: 400; font-size: 2em">We craft smart, human-focused IT solutions to drive business success.</h2> --}}
-                    <ul>
-                    </ul>
-                </div>
-            </div>
+<div class="breadcrumb-murtes" style="background: url(../images/our_clients/client_banner.mp4) center center no-repeat">
+    <div class="video-wrapper">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="{{asset('images/our_clients/client_banner.mp4')}}" type="video/mp4">
+    </video>
+    <video autoplay muted loop playsinline class="bg-video-3">
+        <source src="{{asset('images/our_clients/client_banner_2.mp4')}}" type="video/mp4">
+    </video>
+    <video autoplay muted loop playsinline class="bg-video-2">
+        <source src="{{asset('images/our_clients/client_banner.mp4')}}" type="video/mp4">
+    </video>
+    <div class="banner">
+        <div class="content">
+            <h1 data-content="{{$client->title}}" class="styled-title">
+                {{$client->title}}
+            </h1>
         </div>
     </div>
+</div>
+
+</div>
+
+
+
 </div>
 <script>
     const phrases = [
@@ -443,93 +580,146 @@
 
     <!-- choosing reason begin -->
 <!-- choosing reason end -->
-
-
+<style>
+    p img {
+        width: auto;
+    }
+    
+    .part-text img {
+        max-width: 80% !important;
+        width: auto !important; /* Changed from fixed width */
+        height: auto !important;
+        display: block !important;
+        margin: 15px auto !important; /* This alone should center the image */
+        /* Removed problematic positioning properties */
+    }
+    
+    @media (max-width: 768px) {
+        .part-text img {
+            max-width: 75% !important;
+            width: auto !important; /* Keep auto for better responsiveness */
+        }
+    }
+    
+    /* Additional fix for TinyMCE generated content */
+    .part-text p img {
+        max-width: 80% !important;
+        width: auto !important;
+        height: auto !important;
+        display: block !important;
+        margin: 15px auto !important;
+    }
+    
+    @media (max-width: 768px) {
+        .part-text p img {
+            max-width: 75% !important;
+        }
+    }
+</style>
 <div class="service-service-page">
     <div class="container">
-        <div class="row justify-content-xl-between justify-content-lg-between justify-content-center">
-            <div class="col-xl-6 col-lg-6 col-md-9">
-                <div class="part-img">
-                    <img src="{{asset('images/project/'.$client->image)}}" alt="">
-                </div>
-            </div>
-            <div class="col-xl-5 col-lg-5 col-md-9">
-                <div class="part-text">
-                    <h2>{{$client->title}}</h2>
-                    <p>{{$client->description}}</p>
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-10 mx-auto">
+                <div class="part-text text-center">
+                    <h2>{{ $client->title }}</h2>
+                    <p>{!! $client->description !!}</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <div class="container-fluid my-5">
     <!-- Technologies Used Carousel -->
     <div class="section-title">
         <h2 class="text-center">Technologies Used to Achieve Perfection in This Project</h2>
-      </div>
-
-      <?php 
+    </div>
+    <?php
         $technologia = explode(',', $client->projectTechnology);
-      ?>
-      <div class="container p-3 w-50">
-        <div class="row justify-content-center">
-
+    ?>
+    <div class="container p-3 w-50">
+        <div class="row justify-content-center g-2">
             @foreach ($technologia as $tech)
-            <?php 
+            <?php
                 $techdata = \App\Models\Technology::where('name', $tech)->first();
             ?>
-            <div class="col-lg-2 text-center">
-                <img src="{{$techdata->image}}" class="tech-logo" alt="{{$client->projectTechnology}}"/> 
-                <p class="tech-name mt-2">{{$techdata->name}}</p>
+            <div class="col-4 col-sm-3 col-md-3 col-lg-2 text-center mb-3">
+                <div class="tech-item">
+                    <img src="{{$techdata->image}}" class="tech-logo" alt="{{$client->projectTechnology}}"/>
+                    <p class="tech-name mt-2 text-center">{{$techdata->name}}</p>
+                </div>
             </div>    
             @endforeach
-            {{-- <div class="col-lg-2 text-center">
-                <img src="https://img.icons8.com/ios-filled/100/fa314a/laravel.png" class="tech-logo" alt="{{$client->projectTechnology}}"/> 
-                <p class="tech-name mt-2">{{$client->projectTechnology}}</p>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="https://img.icons8.com/color/150/000000/html-5--v1.png" class="tech-logo" alt="HTML"/>
-                <p class="tech-name mt-2">HTML</p>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="https://img.icons8.com/color/150/000000/javascript--v1.png" class="tech-logo" alt="JS"/>
-                <p class="tech-name mt-2">JS</p>
-            </div>
-            <div class="col-lg-2 text-center">
-                <img src="https://img.icons8.com/color/150/000000/css3.png" class="tech-logo" alt="CSS"/>
-                <p class="tech-name mt-2">CSS</p>
-            </div> --}}
         </div>
     </div>
 </div>
 
+<style>
+/* Additional CSS to prevent overlapping */
+.tech-item {
+    padding: 8px;
+    min-height: 120px; /* Adjust based on your needs */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
+.tech-logo {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
+}
 
-<div class="support support-3" style="padding: 20px 0">
-    <div class="container">
-        <div class="row justify-content-between">
+.tech-name {
+    font-size: 0.75rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    margin-top: 6px !important;
+    line-height: 1.1;
+    text-align: center;
+}
 
-            <div class="col-xl-5 col-lg-5 d-xl-flex d-lg-flex d-block align-items-center">
-                <div class="part-text">
-                    <span class="phone-number">{{env('COMPANY_PHONE')}}</span>
-                    <p>We’re available 24/7!
-                        Get in touch for a detailed analysis and thorough assessment of your plan.</p>
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .tech-name {
+        font-size: 0.7rem;
+        line-height: 1.0;
+    }
+    
+    .tech-logo {
+        max-width: 40px;
+        max-height: 40px;
+    }
+    
+    .tech-item {
+        min-height: 90px;
+        padding: 5px;
+    }
+    
+    .container.w-50 {
+        width: 90% !important; /* Give more space on mobile */
+    }
+}
 
-                    <a href="#" class="support-button">Contact now <i class="fas fa-long-arrow-alt-right"></i></a>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6">
-                <div class="part-cta">
-                    <a href="{{route('contact-us')}}" class="cta-button">REACH OUT NOW</a>
-                    <h2>Obtain further information by
-                         contacting with our experienced 
-                         IT staff.</h2>
-                </div>
-            </div>
+@media (max-width: 380px) {
+    .tech-name {
+        font-size: 0.65rem;
+    }
+    
+    .tech-logo {
+        max-width: 35px;
+        max-height: 35px;
+    }
+    
+    .tech-item {
+        min-height: 80px;
+        padding: 3px;
+    }
+}
+</style>
 
-        </div>
-    </div>
-</div>
 <!-- support end -->
 
 

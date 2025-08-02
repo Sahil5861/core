@@ -243,7 +243,7 @@
       /* background: rgba(0, 00, 0, 0.5) */
     }
     .typewriter-container h1{
-        font-size: 60px !important;
+        font-size: 45px !important;
     }
 
     .static-text {
@@ -281,6 +281,13 @@
         }
       }
 
+
+    @media only screen and (min-width: 320px) and (max-width: 575px) {
+        .header-3 {
+            position: fixed !important;
+        }
+    }
+
     @media (max-width: 768px) {
       .banner2 {
         background: url('../images/banner-5.jpg') no-repeat center center/cover;
@@ -297,83 +304,179 @@
         padding: 20px;
       }
       .banner-content2 h1{
-        font-size: 24px !important;
+        font-size: 20px !important;
+      }
+      .service-service-page .part-text {
+        margin-left: 0px !important;
+      }
+      .technology-row {
+        flex-wrap: nowrap !important;
+      }
+      .service-service-page .part-text h2 {
+        font-size: 34px !important;
+        line-height: 1em !important;
+      }
+      .our-role {
+        padding: 10px 0px !important;
       }
 
+
+
     }
+
+
+
+
+
+
+     .bg-video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        object-fit: cover;
+        z-index: 0;
+    }
+    section{
+        position:relative;
+        width: 100%;
+        height: 0vh;
+        background: #000000;
+    }
+
+    section .wave{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: url(../images/blogs/wave.png);
+        background-size: 1000px 100px;
+    }
+
+    section .wave.wave1{
+        animation: animate-1 30s linear infinite;
+        z-index: 1000;
+        opacity: 1;
+        animation-delay: 0s;
+        bottom: 0;
+    }
+
+    @keyframes animate-1{
+        0%{
+            background-position-x: 0;
+        }
+        100%{
+            background-position-x: 1000px;
+        }
+    }
+
+
+    section .wave.wave2{
+        animation: animate-2 20s linear infinite;
+        z-index: 999;
+        opacity: 0.7;
+        animation-delay: -3s;
+        bottom: 10px;
+    }
+
+    @keyframes animate-2{
+        0%{
+            background-position-x: 0;
+        }
+        100%{
+            background-position-x: -1000px;
+        }
+    }
+    section .wave.wave3{
+        animation: animate-3 10s linear infinite;
+        z-index: 998;
+        opacity: 0.5;
+        animation-delay: -2s;
+        bottom: 15px;
+    }
+
+    @keyframes animate-3{
+        0%{
+            background-position-x: 0;
+        }
+        100%{
+            background-position-x: 1000px;
+        }
+    }
+    section .wave.wave4{
+        animation: animate-4 5s linear infinite;
+        z-index: 997;
+        opacity: 0.3;
+        animation-delay: -1s;
+        bottom: 20px;
+    }
+
+    @keyframes animate-4{
+        0%{
+            background-position-x: 0;
+        }
+        100%{
+            background-position-x: 1000px;
+        }
+    }
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 16%;
+
+        /* New gradient background */
+        background: linear-gradient(
+            to bottom,
+            rgba(107, 95, 175, 0.854) 0%,
+            rgba(107, 95, 175, 0.203) 100%
+        );
+        z-index: 1;
+    }
+    .service-service-page {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-service-page .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .service-service-page .video-background video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .service-service-page .video-background .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width:100%;
+        height:100%;
+        
+        z-index:1;
+    }
+
+    .service-service-page .container {
+        position: relative;
+        z-index: 2;
+    }
+
+
 
 </style>
-@section('section')
-<!-- breadcrumb begin -->
-<div class="breadcrumb-murtes" style="background: url(../images/services.png) center center no-repeat">
-    <div class="container">
-       <div class="row">
-            <div class="col-xl-6 col-lg-6">
-                <div class="typewriter-container">
-                    <h4 style="color:#fff">"We craft smart, human-focused IT solutions to drive business success."</h4>
-                    <h1 class="static-text"style="color:#fff">What We Really Are!</h1>        
-                    <h1 class="typewriter-text" style="color:#fff" id="typewriter"></h1>
-                </div> 
-                {{-- <div class="breadcrumb-content">
-                    <h2 style="width: 1100px; font-weight: 400; font-size: 2em">We craft smart, human-focused IT solutions to drive business success.</h2> --}}
-                    <ul>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
-<script>
-    const phrases = [
-      "Strategic Partner",
-      "Empowering Growth",
-      "Technical Excellence",
-      "Scalable Solutions",
-      "Innovative Frameworks",
-      "Seamless Experiences",
-      "Digital Transformation",
-      "Future-Ready Tech"
-    ];
 
-    let currentPhraseIndex = 0;
-    let currentCharIndex = 0;
-    const typeSpeed = 50;
-    const eraseSpeed = 50;
-    const delayBetweenPhrases = 2000;
-    
-
-
-    const typewriterElement = document.getElementById("typewriter");
-
-    function type() {
-      const currentPhrase = phrases[currentPhraseIndex];
-      if (currentCharIndex < currentPhrase.length) {
-        const span = document.createElement('span');
-        const char = currentPhrase.charAt(currentCharIndex);
-        span.innerHTML = char === " " ? "&nbsp;" : char;
-        span.classList.add('fade-in');
-        typewriterElement.appendChild(span);
-        currentCharIndex++;
-        setTimeout(type, typeSpeed);
-      } else {
-        setTimeout(erase, delayBetweenPhrases);
-      }
-    }
-
-    function erase() {
-      if (currentCharIndex > 0) {
-        typewriterElement.textContent = typewriterElement.textContent.slice(0, -1);
-        currentCharIndex--;
-        setTimeout(erase, eraseSpeed);
-      } else {
-        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-        setTimeout(type, 300);
-      }      
-    }
-
-    // Start the typewriter effect
-    type();
-</script>
+ <div class="video-overlay"></div>
 <!-- breadcrumb end -->
 
 <!-- about begin -->
@@ -411,159 +514,73 @@
 
 
 <!-- service begin -->
+
+<!-- service end -->
 <div class="service-service-page">
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="{{asset('images/service_banner.mp4')}}" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
     <div class="container">
-        <div class="row justify-content-xl-between justify-content-lg-between justify-content-center">
-            <div class="col-xl-6 col-lg-6 col-md-9">
-                <div class="part-img">
-                    <img src="{{asset('images/service-7.jpg')}}" alt="">
-                </div>
-            </div>
-            <div class="col-xl-5 col-lg-5 col-md-9">
-                <div class="part-text">
-                    <h2>We run all kinds of IT
-                        services that vow your
-                        success</h2>
-                    <p>We help transform the world most important businesses into
-                        that anticipate the agile unpredtable adapt rapidly disruption
-                        with high potential and high ambition.</p>
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-5 col-md-9">
+                <div class="part-text text-center">
+                    <h2>{{$service->title}}</h2>
+                    <p style="color: black;">{{$service->content}}</p>
                 </div>
             </div>
         </div>  
     </div>
 </div>
-<!-- service end -->
+<section>
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+</section>
+<div class="container-fluid my-5">
+    <!-- Technologies Used Carousel -->
+    <div class="section-title">
+        <h2 class="text-center">Technologies Used to Achieve Perfection in {{$service->title}}</h2>
+      </div>
 
-<!-- service list begin -->
-<div class="service-2 service-4 service-list-service-page">
-    <div class="container">
-        <div class="row no-gutters service-list-row">
+      <?php 
+        $technologia = explode(',', $service->technology);
+      ?>
+      <div class="container p-3 w-50">
+        <div class="row justify-content-center technology-row"> 
 
-            @foreach ($services as $key => $service)                
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single-servcie">
-                        <div class="left">
-                            <div class="number">{{$key + 1}}</div>
-                        </div>
-                        <div class="right">
-                            <h3 class="service-title" style="height: 70px;">{{$service->title}}</h3>
-                            <p class="service-content">{{$service->description}}</p>
-                            <a href="https://html.themexriver.com/murtes/murtes/service.html#" class="service-details-button">details <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                </div>            
+            @foreach ($technologia as $tech)
+            <?php 
+                $techdata = \App\Models\Technology::where('name', $tech)->first();
+            ?>
+            <div class="col-lg-2 text-center">
+                <img src="{{$techdata->image}}" class="tech-logo" alt="{{$techdata->name}}"/> 
+                <p class="tech-name mt-2">{{$techdata->name}}</p>
+            </div>    
             @endforeach
         </div>
     </div>
 </div>
-<!-- service list end -->
-
-<!-- choosing reason begin -->
-<div class="choosing-reason-2 choosing-reason-service-page">
-    <div class="container this-container">
-        <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-6 col-md-8">
-                <div class="section-title-2 text-center">
-                    <h2>How we work?<br>and provide services!</h2>
-                    <p>But I must explain to you how all this mistaken denouncing
-                            praising pain was born and I will give you</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="500">
-                <div class="single-reason">
-                    <div class="part-head">
-                        <span class="number">01</span>
-                    </div>
-                    <div class="part-body">
-                        <h3>Meeting with
-                                the customer
-                                </h3>
-                        {{-- <p>Collecting event old above shy bed favour income has stuff.</p> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="1000">
-                <div class="single-reason">
-                    <div class="part-head">
-                        <span class="number">02</span>
-                    </div>
-                    <div class="part-body">
-                        <h3>Work hard on
-                                the project</h3>
-                        {{-- <p>Collecting event old above shy bed favour income has stuff.</p> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="1500">
-                <div class="single-reason">
-                    <div class="part-head">
-                        <span class="number">03</span>
-                    </div>
-                    <div class="part-body">
-                        <h3>We finish the
-                                project</h3>
-                        {{-- <p>Collecting event old above shy bed favour income has stuff.</p> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
-                <div class="single-reason">
-                    <div class="part-head">
-                        <span class="number">04</span>
-                    </div>
-                    <div class="part-body">
-                        <h3>Successfully
-                                launch project</h3>
-                        {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- choosing reason end -->
-
-
-
-
-
-<!-- support begin -->
-<div class="support support-3">
+<div class="service-service-page our-role p-5">
     <div class="container">
-        <div class="row justify-content-xl-between justify-content-lg-between justify-content-center">
-            
-            <div class="col-xl-5 col-lg-5 col-md-8 d-xl-flex d-lg-flex d-block align-items-center">
-                <div class="part-text">
-                    <span class="phone-number">{{env('COMPANY_PHONE')}}</span>
-                    <p>But I must explain to you how all this mistaken
-                        denouncing praising pain was born and via us
-                        passing pain was born give you.</p>
-                    
-                    <a href="https://html.themexriver.com/murtes/murtes/about.html#" class="support-button">Contact now <i class="fas fa-long-arrow-alt-right"></i></a>
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-5 col-md-9">
+                <div class="part-text text-center">
+                    <h2>Our Role in Achieving Your Business Goals</h2>
+                    <p>{{$service->our_role}}</p>
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-6">
-                <div class="part-cta">
-                    <a href="https://html.themexriver.com/murtes/murtes/about.html#" class="cta-button">CALL FOR ADVICE NOW</a>
-                    <h2>To make requests
-                        for further information,
-                        contact us via our social
-                        channels.</h2>
-                </div>
-            </div>
-
-        </div>
+        </div>  
     </div>
 </div>
-<!-- support end -->
+
+@include('includes.contact-form')
 
 
 
-
-@endsection
 @section('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
@@ -625,7 +642,7 @@
             }
         });
     });
-    </script>
+</script>
     
 @endsection
 

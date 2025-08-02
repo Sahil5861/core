@@ -21,7 +21,7 @@ class ContactController extends Controller
         $validator = Validator::make($request->all(),[
                 'name' => 'required',
                 'email' => 'required',
-                'subject' => 'required',
+                'mobile' => 'required',
                 'message' => 'required',
             ]
         );
@@ -33,12 +33,12 @@ class ContactController extends Controller
             $contact = new Contact;
             $contact->name = $request->name;
             $contact->email = $request->email;
-            $contact->subject = $request->subject;
+            $contact->mobile = $request->mobile;
             $contact->message = $request->message;                                                
             if($contact->save()){
-                $details = ['name' =>$request->name,'email' =>$request->email, 'subject' => $request->subject, 'message' => $request->message];
-                // $sent = Mail::to('contact@coretechinfo.com')->send(new Contact_Us($details));
-                $sent = false;                
+                $details = ['name' =>$request->name,'email' =>$request->email, 'mobile' => $request->mobile, 'message' => $request->message];
+                $sent = Mail::to('saddam@coretechinfo.com')->send(new Contact_Us($details));
+                // $sent = false;                
                 return redirect('/contact-us')->with('success', 'Your inquiry submitted successfully!');                
             }else{
                 return redirect('/contact-us')->with('error', 'Your inquiry submission failed!');

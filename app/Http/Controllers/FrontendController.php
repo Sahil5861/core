@@ -22,12 +22,13 @@ class FrontendController extends Controller
     public function __construct()
     {
         $this->data['setting'] = Setting::firstwhere('id',1);
-        $this->data['clients'] = OurClient::all();
+        $this->data['clients'] = OurClient::where('status',1)->get();
         $this->data['team'] = OurTeam::where('status', 1)->get();
-        $this->data['services']=OurService::all();  
+        $this->data['services']=OurService::where('status',1)->get();  
+        $this->data['service_list']=OurService::all();  
         $this->data['blogData'] = Blog::latest()->take(3)->get();
-        $this->data['blog_data']=Blog::all();
-        $this->data['project']=Project::all();
+        $this->data['blog_data']=Blog::where('status',1)->get();
+        $this->data['project']=Project::where('status',1)->get();
     }
    
     public function home(){
@@ -38,6 +39,10 @@ class FrontendController extends Controller
         return view('frontend.about_us',$this->data);
     }
 
+    public function service_list()
+    {
+        return view('frontend.service_list',$this->data);
+    }
     public function services()
     {
         return view('frontend.service',$this->data);
@@ -52,10 +57,13 @@ class FrontendController extends Controller
         return view('frontend.client_details',$this->data);
     }
 
-    public function service_detail($id){
-        $service = OurService::where('id', $id)->first();
+    public function service_detail($slug){
+        $service = OurService::where('slug', $slug)->first();
         $this->data['service'] = $service;
-        return view('frontend.service_details',$this->data);
+
+        // dd($service);exit;   
+        
+        return view('frontend.service',$this->data);
     }
 
     public function projects(){
@@ -79,10 +87,19 @@ class FrontendController extends Controller
         $blog=Blog::where('id',$id)->get();
         return view('frontend.blog_details',compact('blog'),$this->data);
     }
-    public function blog_details()
+    public function blog_details($slug)    
     {
-        return view('frontend.blog_details',$this->data);
+        $blog = Blog::where('slug', $slug)->first();
+
+        if (!$blog) {
+            abort(404);
+        }
+
+        $this->data['blogsData'] = $blog;
+
+        return view('frontend.blog_details', $this->data);
     }
+
     public function Search_blogs(Request $request)
     {
         $search_key=$request->input('search');    
@@ -134,6 +151,7 @@ class FrontendController extends Controller
         // ]);
        
     }
+
     public function settings()
     {
         return view('settings');

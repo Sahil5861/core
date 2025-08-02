@@ -364,7 +364,7 @@
       /* background: rgba(0, 00, 0, 0.5) */
     }
     .typewriter-container h1{
-        font-size: 40px !important;
+        font-size: 40px;
     }
 
     .static-text {
@@ -529,10 +529,306 @@
         background-color: rgba(107, 95, 175, 0.5); /* #6B5FAF with 50% opacity */
         z-index: 1;
     }
+   .fixed-blog-panel {
+        position: absolute; /* initial absolute position */
+        right: 10vw;
+        width: 250px;
+        max-height: 80vh;
+        overflow-y: auto;
+        background: #fff;
+        border-radius: 8px 0 0 8px;
+        padding: 15px;
+        box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+        z-index: 100;
+    }
+
+
+
+    .fixed-blog-panel h4 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .blog-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .blog-card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 5px;
+        padding: 8px;
+        border: 1px solid #eee;
+        text-decoration: none;
+        color: inherit;
+        transition: background-color 0.3s ease;
+    }
+
+    .blog-card:hover {
+        background-color: #f9f9f9;
+    }
+
+    .blog-card img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .blog-card-content h5 {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .blog-card-content span {
+        font-size: 0.85rem;
+        color: #555;
+    }
+
+
+   @media (max-width: 768px) {
+        .banner2 {
+            background: url('../images/banner-5.jpg') no-repeat center center/cover;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+        .banner-content2 {
+            top: 90%;
+            left: 10px;        
+            font-size: 24px;
+            padding: 20px;
+        }
+        .banner-content2 h1{
+            font-size: 24px !important;
+        }
+        .typewriter-container {
+            min-height: 13vh !important;
+            margin-top: 10vh !important;
+            margin-bottom: 1vh !important;
+            max-width: 80vw !important;
+        }
+        .head-text {
+            font-size: 1.1rem !important;
+        }
+        .head-sub-text {
+            font-size: 1rem !important;
+        }
+        .head-head {
+            padding-left: 8px !important;
+        }
+        .project {
+            padding: 0px 0px !important;
+        }
+        .card-img-top {
+            padding-top: 10px;
+        }
+        
+        /* Blog banner specific responsive styles */
+        .breadcrumb-murtes .col-xl-6 {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+        }
+        .breadcrumb-murtes .static-text {
+            font-size: 1.1rem !important;
+        }
+        .breadcrumb-murtes .typewriter-container {
+            flex: 1 !important;
+            margin-right: 15px !important;
+        }
+        .breadcrumb-murtes img {
+            width: 25vw !important;
+            margin-right: 0 !important;
+            flex-shrink: 0 !important;
+        }
+    }
+
+
+
+    /* Desktop Sticky Sidebar */
+    .fixed-blog-panel {
+        position: absolute;
+        right: 10vw;
+        width: 250px;
+        max-height: 80vh;
+        overflow-y: auto;
+        background: #fff;
+        border-radius: 8px 0 0 8px;
+        padding: 15px;
+        box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+        z-index: 100;
+    }
+
+    .fixed-blog-panel h4 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .blog-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .blog-card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 5px;
+        padding: 8px;
+        border: 1px solid #eee;
+        text-decoration: none;
+        color: inherit;
+        transition: background-color 0.3s ease;
+    }
+
+    .blog-card:hover {
+        background-color: #f9f9f9;
+    }
+
+    .blog-card img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .blog-card-content h5 {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .blog-card-content span {
+        font-size: 0.85rem;
+        color: #555;
+    }
+
+    /* Mobile Blog Section - Compact Version */
+    .mobile-blog-section {
+        display: none;
+        padding: 30px 0;
+        background: #f8f9fa;
+    }
+
+    .mobile-blog-section h4 {
+        font-size: 1.25rem;
+        margin-bottom: 15px;
+        text-align: center;
+        color: #333;
+    }
+
+    .mobile-blog-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .mobile-blog-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: #fff;
+        border-radius: 6px;
+        padding: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mobile-blog-card:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .mobile-blog-card img {
+        width: 65px;
+        height: 65px;
+        object-fit: cover;
+        border-radius: 6px;
+        flex-shrink: 0;
+    }
+
+    .mobile-blog-card-content {
+        flex: 1;
+    }
+
+    .mobile-blog-card-content h5 {
+        font-size: 1rem;
+        margin: 0 0 5px 0;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+
+    .mobile-blog-card-content span {
+        font-size: 0.85rem;
+        color: #666;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        /* Hide desktop sticky sidebar */
+        .fixed-blog-panel {
+            display: none !important;
+        }
+        
+        /* Show mobile blog section */
+        .mobile-blog-section {
+            display: block;
+        }
+        
+        /* Adjust main blog section for mobile */
+        #blogSection {
+            padding-bottom: 30px;
+        }
+        
+        /* Even more compact on very small screens */
+        .mobile-blog-cards {
+            max-width: 350px;
+            gap: 8px;
+        }
+        
+        .mobile-blog-card {
+            padding: 8px;
+            gap: 10px;
+        }
+        
+        .mobile-blog-card img {
+            width: 55px;
+            height: 55px;
+        }
+        
+        .mobile-blog-card-content h5 {
+            font-size: 0.95rem;
+        }
+        
+        .mobile-blog-card-content span {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (min-width: 769px) {
+        /* Ensure mobile section is hidden on desktop */
+        .mobile-blog-section {
+            display: none !important;
+        }
+    }
  
 
 </style>
 
+@section('section')
+<!-- breadcrumb begin -->
 @section('section')
 <!-- breadcrumb begin -->
 <div class="breadcrumb-murtes" style="background: url(../images/blogs/whiteBG.jpg) center center no-repeat">
@@ -543,19 +839,16 @@
     <div class="video-overlay"></div>
     <div class="container">
        <div class="row">
-            <div class="col-xl-6 col-lg-6 d- xl-flex d-lg-flex d-block align-items-center">
+            <div class="col-xl-6 col-lg-6 d-xl-flex d-lg-flex d-block align-items-center head-head">
                 <div class="typewriter-container">
-                    <h1 class="static-text"style="color:#000000">Dive into Fresh Insights</h1> 
-                     <h1 class="typewriter-text" id="typewriter"></h1> 
-                </div> 
+                    <h1 class="static-text head-text" style="color:#000000">Dive into Fresh Insights</h1>
+                     <h1 class="typewriter-text head-text" id="typewriter"></h1>
+                </div>
                 <div>
                      <img src="{{ asset('/images/blogs/blog-banner-icon.png') }}" alt="" style="width: 40vw; margin-right: 5%;">
                 </div>
-                {{-- <div class="breadcrumb-content">
-                    <h2 style="width: 1100px; font-weight: 400; font-size: 2em">We craft smart, human-focused IT solutions to drive business success.</h2> --}}
-                    <ul>
-                    </ul>
-                </div>
+                <ul>
+                </ul>
             </div>
         </div>
     </div>
@@ -677,7 +970,9 @@
 
 @include('includes.wave')
 
-<div class="blog blog-3" style="padding-bottom:100px;">
+<!-- Main Blog Section -->
+<!-- Main Blog Section -->
+<div id="blogSection" class="blog blog-3" style="padding-bottom:100px;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-12 col-lg-10 col-md-8">
@@ -687,34 +982,322 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div id="blogList" class="row">
             @foreach ($blogData as $blog)                
-                <div class="col-xl-4 col-lg-4 col-md-6 aos-init mb-4">
-                    <div class="card blog-card" style="min-height: 30.5rem;">
-                        <img src="{{ asset('images/blogs/'.$blog->image) }}" class="card-img-top" alt="Blog Image" style="height: 247px; width: auto; object-fit: cover;">
+                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 aos-init mb-4">
+                    <div class="card blog-card">
+                        <a href="{{ route('blog-details', $blog->slug) }}" class="d-block blog-image-link">
+                            <div class="blog-image-container">
+                                <img
+                                    src="{{ asset('images/blogs/' . $blog->image) }}"
+                                    alt="Blog Image"
+                                    class="blog-image"
+                                />
+                            </div>
+                        </a>
                         <div class="card-body">
-                            <h3 class="card-title">{{$blog->title}}</h3>                            
-                            <p class="card-text">{{ \Illuminate\Support\Str::words($blog->content, 10, '...') }}</p>
-                            
-                        </div>
-                        <div class="card-meta card-footer d-flex justify-content-between align-items-center p-3">
-                            <span><i class="fas fa-user"></i> By {{$blog->name}}</span>
-                            <span><i class="far fa-calendar-alt"></i> 20.05.2019</span>
-                        </div>            
+                            <a href="{{ route('blog-details', $blog->slug) }}" class="blog-title-link">
+                                <h3 class="card-title">{{$blog->title}}</h3>
+                            </a>
+                             <div class="card-meta d-flex align-items-center">
+                                <span class="meta-item"><i class="fas fa-user"></i> By {{$blog->name}}</span>
+                                <span class="meta-item"><i class="far fa-calendar-alt"></i> {{ $blog->created_at->format('M d, Y') }}</span>
+                            </div>                          
+                            <p class="card-text">{{ \Illuminate\Support\Str::words($blog->content, 29, '...') }}</p>
+                        </div>                    
                     </div>
-                </div>                             
+                </div>                            
             @endforeach
-
-            {{-- data-aos="fade-up" data-aos-offset="300"
-                data-aos-duration="2000" data-aos-easing="ease-in-sine" --}}
-            
         </div>
     </div>
+</div>
 
+<style>
+    /* Specific styling for main blog section only */
+    #blogSection .blog-card {
+        border: 1px solid #eee;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    
+    #blogSection .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    #blogSection .blog-image-link {
+        text-decoration: none;
+    }
+    
+    #blogSection .blog-title-link {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    #blogSection .blog-title-link:hover {
+        color: #007bff;
+        text-decoration: none;
+    }
+    
+    /* Desktop Layout (Horizontal) */
+    @media (min-width: 769px) {
+        #blogSection .blog-card {
+            display: flex;
+            flex-direction: row !important;
+            min-height: 15.5rem;
+        }
+        
+        #blogSection .blog-image-container {
+            width: 280px;
+            height: 250px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        #blogSection .blog-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        #blogSection .blog-card:hover .blog-image {
+            transform: scale(1.05);
+        }
+        
+        #blogSection .card-body {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #blogSection .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        #blogSection .card-meta {
+            padding: 0 !important;
+            border-top: 0px !important;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        #blogSection .meta-item {
+            font-size: 12px !important;
+            color: #666 !important;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        #blogSection .meta-item i {
+            margin-right: 5px;
+        }
+        
+        #blogSection .card-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            flex-grow: 1;
+        }
+    }
+    
+    /* Mobile Layout (Vertical Cards) */
+    @media (max-width: 768px) {
+        #blogSection .blog-card {
+            display: flex;
+            flex-direction: column !important;
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+        
+        #blogSection .blog-image-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        #blogSection .blog-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        #blogSection .blog-card:hover .blog-image {
+            transform: scale(1.05);
+        }
+        
+        #blogSection .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #blogSection .card-title {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #333;
+        }
+        
+        #blogSection .card-meta {
+            padding: 0 !important;
+            border-top: 0px !important;
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start !important;
+        }
+        
+        #blogSection .meta-item {
+            font-size: 13px !important;
+            color: #666 !important;
+            margin-right: 0;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        #blogSection .meta-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        #blogSection .meta-item i {
+            margin-right: 8px;
+            width: 12px;
+        }
+        
+        #blogSection .card-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        /* Single column layout for mobile */
+        #blogSection #blogList .col-12 {
+            margin-bottom: 0;
+        }
+        
+        /* Ensure full width on mobile */
+        #blogSection #blogList [class*="col-"] {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+</style>
+<!-- Sticky Sidebar for Desktop -->
+<div id="sidePanel" class="fixed-blog-panel">
+    <h4>Latest Blogs</h4>
+    <div class="blog-cards">
+        @foreach($blogData->take(10) as $data)
+            <a href="{{ route('blog-details', $data->slug) }}" class="blog-card">
+                <img src="{{ asset('images/blogs/' . $data->image) }}" alt="{{ $data->title }}">
+                <div class="blog-card-content">
+                    <h5>{{ $data->title }}</h5>
+                    <span>{{ $data->created_at->format('F d, Y') }}</span>
+                </div>
+            </a>
+        @endforeach
+    </div>
+</div>
 
+<!-- Mobile Blog Section (appears below main blog section) -->
+<div id="mobileBlogSection" class="mobile-blog-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4>Latest Blogs</h4>
+                <div class="mobile-blog-cards">
+                    @foreach($blogData->take(2) as $data)
+                        <a href="{{ route('blog-details', $data->slug) }}" class="mobile-blog-card">
+                            <img src="{{ asset('images/blogs/' . $data->image) }}" alt="{{ $data->title }}">
+                            <div class="mobile-blog-card-content">
+                                <h5>{{ $data->title }}</h5>
+                                <span>{{ $data->created_at->format('F d, Y') }}</span>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+                
+                <h4 style="margin-top: 30px;">Trending Blogs</h4>
+                <div class="mobile-blog-cards">
+                    @foreach($blogData->take(2) as $data)
+                        <a href="{{ route('blog-details', $data->slug) }}" class="mobile-blog-card">
+                            <img src="{{ asset('images/blogs/' . $data->image) }}" alt="{{ $data->title }}">
+                            <div class="mobile-blog-card-content">
+                                <h5>{{ $data->title }}</h5>
+                                <span>{{ $data->created_at->format('F d, Y') }}</span>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection
 @section('js')
+<script>
+    // Only run sticky behavior on desktop
+    if (window.innerWidth > 768) {
+        window.addEventListener('scroll', function() {
+            const sidePanel = document.getElementById('sidePanel');
+            const blogList = document.getElementById('blogList');
+            
+            if (!sidePanel || !blogList) return;
+            
+            const sidePanelHeight = sidePanel.offsetHeight;
+            const blogListRect = blogList.getBoundingClientRect();
+            const scrollY = window.scrollY;
+            const topOffset = 100;
+            
+            // Absolute positions relative to document top
+            const blogListTop = blogListRect.top + scrollY;
+            const blogListBottom = blogListRect.bottom + scrollY;
+            
+            if (scrollY + topOffset < blogListTop) {
+                // Scroll is above blogList top — lock sidebar at blogList top (absolute)
+                sidePanel.style.position = 'absolute';
+                sidePanel.style.top = blogListTop + 'px';
+            }
+            else if (scrollY + topOffset + sidePanelHeight > blogListBottom) {
+                // Scroll is below blogList bottom — lock sidebar at blogList bottom (absolute)
+                sidePanel.style.position = 'absolute';
+                sidePanel.style.top = (blogListBottom - sidePanelHeight) + 'px';
+            }
+            else {
+                // Sidebar fixed inside blogList vertical bounds
+                sidePanel.style.position = 'fixed';
+                sidePanel.style.top = topOffset + 'px';
+            }
+        });
+    }
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        const sidePanel = document.getElementById('sidePanel');
+        if (window.innerWidth <= 768) {
+            // Reset position styles on mobile
+            if (sidePanel) {
+                sidePanel.style.position = '';
+                sidePanel.style.top = '';
+            }
+        }
+    });
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
     $(document).ready(function(){

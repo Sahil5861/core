@@ -3,6 +3,11 @@
         margin: 0;
         padding: 0;
     }
+    @media (max-width: 768px) {
+        section .wave {
+            display: none !important;
+        }
+    }
 
     section{
         position:relative;

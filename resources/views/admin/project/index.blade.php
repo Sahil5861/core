@@ -335,9 +335,21 @@
 <!-- import csv file to add project end -->
 @endsection
 @section('footer')
-
+<script src="{{asset('tinymce.min.js')}}" referrerpolicy="origin"></script>
 <script type="text/javascript">
    $(document).ready(function(){
+      tinymce.init({
+            selector: '#description, #description1',
+            height: 500,
+            menubar: true,
+            plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help quickbars emoticons accordion',
+            toolbar: 'undo redo  | bold italic underline strikethrough | align numlist bullist | link image | table media | lineheight outdent indent | forecolor backcolor removeformat | charmap emoticons | code fullscreen preview | save print | pagebreak anchor codesample | ltr rtl | formatselect',
+            content_style: "@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');",
+            font_formats: "Alegreya=Alegreya,serif; Amatic SC='Amatic SC',cursive; Andale Mono=andale mono,times; Architects Daughter='Architects Daughter',cursive; Arvo=Arvo,serif; Baloo 2='Baloo 2',cursive; Balsamiq Sans='Balsamiq Sans',cursive; Bitter=Bitter,serif; Book Antiqua=book antiqua,palatino; Bree Serif='Bree Serif',serif; Cabin=Cabin,sans-serif; Cairo=Cairo,sans-serif; Calibri=Calibri,sans-serif; Chewy=Chewy,cursive; Comic Sans MS=comic sans ms,sans-serif; Coming Soon='Coming Soon',cursive; Comfortaa=Comfortaa,cursive; Courgette=Courgette,cursive; Courier New=courier new,courier; Crimson Text='Crimson Text',serif; Cormorant Garamond='Cormorant Garamond',serif; Dancing Script='Dancing Script',cursive; Domine=Domine,serif; Dosis=Dosis,sans-serif; EB Garamond='EB Garamond',serif; Exo=Exo,sans-serif; Fira Sans='Fira Sans',sans-serif; Fredoka=Fredoka,sans-serif; Georgia=georgia,palatino; Gloria Hallelujah='Gloria Hallelujah',cursive; Great Vibes='Great Vibes',cursive; Helvetica=helvetica; Impact=impact,chicago; Inconsolata=Inconsolata,monospace; Indie Flower='Indie Flower',cursive; Josefin Sans='Josefin Sans',sans-serif; Karla=Karla,sans-serif; Lato=Lato,sans-serif; Libre Baskerville='Libre Baskerville',serif; Libre Franklin='Libre Franklin',sans-serif; Lobster=Lobster,cursive; Lora=Lora,serif; Manrope=Manrope,sans-serif; Merriweather=Merriweather,serif; Montserrat=Montserrat,sans-serif; Muli=Muli,sans-serif; Noto Serif='Noto Serif',serif; Nunito=Nunito,sans-serif; Open Sans='Open Sans',sans-serif; Oswald=Oswald,sans-serif; Overpass=Overpass,sans-serif; Pacifico=Pacifico,cursive; Patrick Hand='Patrick Hand',cursive; Play=Play,sans-serif; Playfair Display='Playfair Display',serif; Poppins=Poppins,sans-serif; Prompt=Prompt,sans-serif; PT Sans='PT Sans',sans-serif; Quicksand=Quicksand,sans-serif; Raleway=Raleway,sans-serif; Righteous=Righteous,cursive; Roboto=Roboto,sans-serif; Rock Salt='Rock Salt',cursive; Rokkitt=Rokkitt,serif; Saira=Saira,sans-serif; Satisfy=Satisfy,cursive; Shadows Into Light='Shadows Into Light',cursive; Slabo 27px='Slabo 27px',serif; Source Sans Pro='Source Sans Pro',sans-serif; Spectral=Spectral,serif; Spinnaker=Spinnaker,sans-serif; Symbol=symbol; Syne=Syne,sans-serif; Tajawal=Tajawal,sans-serif; Tahoma=tahoma,arial,helvetica,sans-serif; Terminal=terminal,monaco; Times New Roman=times new roman,times; Titillium Web='Titillium Web',sans-serif; Tinos=Tinos,serif; Trebuchet MS=trebuchet ms,geneva; Ubuntu=Ubuntu,sans-serif; Varela Round='Varela Round',sans-serif; Verdana=verdana,geneva; Vollkorn=Vollkorn,serif; Webdings=webdings; Wingdings=wingdings,zapf dingbats; Work Sans='Work Sans',sans-serif; Yanone Kaffeesatz='Yanone Kaffeesatz',sans-serif; Zilla Slab='Zilla Slab',serif;",
+            extended_valid_elements: 'a[href|target|rel|style],img[src|style|width|height]',
+            convert_urls: false,
+            
+      })
      $('#multi-column-ordering').DataTable({
         processing: true,
         serverSide: true,
@@ -441,7 +453,8 @@
                   var _image = "{{asset('images/project/')}}"+"/"+result.data.image;
                   $('#id').val(result.data.id);
                   $('#title1').val(result.data.title);
-                  $('#description1').val(result.data.description);
+                  // $('#description1').val(result.data.description);
+                  tinymce.get('description1').setContent(result.data.description);
                   // $("select[name=test]").val([1,2,3]);
                   $('#technology1').val(result.data.technology);
                   $('#app_type1').val(result.data.app_type);

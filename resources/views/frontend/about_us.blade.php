@@ -1,135 +1,5 @@
 @extends('layouts.frontend_default')
-{{-- <style>
-    .owl-carousel .item {
-            padding: 5px;
-        }
 
-        .card {
-            background: #fff;
-            border-radius: 10px;            
-            text-align: center;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            color: #000;
-            transition: 0.3s ease-in-out;
-            padding: 20px;
-            margin: 0;
-        }
-
-        .card-content {
-            padding: 15px 0;
-        }
-
-        h3 {
-            margin: 10px 0 5px;
-        }
-
-        p {
-            color: inherit;
-        }
-
-        .details {
-            display: inline-block;
-            margin-top: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            /* color: #007bff; */
-            color: #007bff;
-        }
-
-        .service-crausel .owl-item.center .card {
-            background: url('images/map-vector-bg.png') center center no-repeat;
-            background-size: cover;
-            color: #fff;
-            background-color: #007bff;
-        }
-
-        .service-crausel .owl-item.center .details {
-            color: #fff;
-        }
-
-        .service-crausel .owl-nav button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            /* background: rgba(0, 0, 0, 0.5); */
-            background-color: #007bff;
-            width: 60px; height: 60px;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 20px;
-            border-radius: 50%;
-            z-index: 10;
-            display: block !important;
-        }
-
-
-        .project-crausel .owl-nav button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            /* background-color: #007bff; */
-            /* width: 60px; height: 60px; */
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 20px;
-            border-radius: 50%;
-            z-index: 10;
-            display: block !important;
-        }
-
-        .service-crausel .owl-nav .owl-prev {
-            left: -66px;
-            top: 174px;
-        }
-
-        .service-crausel .owl-nav .owl-next {
-            right: -66px;
-            top: 174px;
-        }
-
-        .oject-crausel .owl-nav .owl-prev {
-            left: 10px;            
-        }
-
-        .oject-crausel .owl-nav .owl-next {
-            right: 10px;            
-        }
-
-        .sevice-card .card-content{
-            text-align: left;
-            min-height: 13rem;
-        }
-
-        .testimonial-card {
-            position: relative;
-            padding-bottom: 50px; /* Space for image */
-            min-height: 20rem;
-        }
-
-        .rating i {
-            font-size: 1.2rem;
-        }        
-        .owl-carousel .testimonial-card .testimonial-img{
-            width: 50px !important; /* Adjust size */
-            height: 50px !important;
-            border-radius: 50% !important;
-            object-fit: cover;
-            margin: 10px;
-        }
-
-
-        
-
-    
-    /* .owl-prev i, .owl-next i{
-        line-height: 4;
-    } */
-</style> --}}
 
 <style>
     /* section */
@@ -276,7 +146,7 @@
       /* background: rgba(0, 00, 0, 0.5) */
     }
     .typewriter-container h1{
-        font-size: 60px !important;
+        font-size: 60px;
     }
 
     .static-text {
@@ -327,7 +197,43 @@
             line-height: 50px !important;
         }
         .typewriter-container{
-            margin-top: -30px;
+            margin-top: 25px;
+        }
+        .video-top{
+            height: 28vh;
+        }
+        .head-text {
+            font-size: 1.5rem !important;
+        }
+        .head-sub-text {
+            font-size: 1rem !important;
+        }
+        .what-we-do{
+            margin-top: 120vh !important;
+        }
+        .cta-title{
+            font-size: 1.5rem !important;
+        }
+        .about-details .part-text h2 {
+            font-size: 1.5rem !important;
+        }
+        .about-details .part-img img{
+            width: 80%  !important;
+        }
+        .about-core {
+            font-size: 1.5rem !important;
+        }
+        .about-core-text {
+            font-size: 1.2rem !important;
+        }
+        .section-title h2 {
+            font-size: 1.5rem !important;
+        }
+       
+    }
+    @media (min-width: 769px) (max-width: 1024px) {
+        .what-we-do {
+            margin-top: 20vh !important;
         }
     }
 
@@ -339,7 +245,7 @@
         padding: 20px;
       }
       .banner-content2 h1{
-        font-size: 24px !important;
+        font-size: 24px;
       }
 
     .bg-video{
@@ -382,9 +288,10 @@
         
 
 </style>
+@include('includes.socials')
 @section('section')
 <!-- breadcrumb begin -->
-<div class="breadcrumb-murtes" style="background: url(../images/about-us.png) center center no-repeat">
+<div class="breadcrumb-murtes video-top" style="background: url(../images/as.png) center center no-repeat">
      <video autoplay muted loop playsinline class="bg-video">
       <source src="{{asset('images/about-us_banner.mp4')}}" type="video/mp4">
       Your browser does not support the video tag.
@@ -394,9 +301,9 @@
         <div class="row">
             <div class="col-xl-6 col-lg-6">
                 <div class="typewriter-container position-relative z-5">
-                    <h4 style="color:#000000">"We craft smart, human-focused IT solutions to drive business success."</h4>
-                    <h1 class="static-text" style="color:#000000">What We Really Are!</h1>        
-                    <h1 class="typewriter-text" style="color:#000000" id="typewriter"></h1>
+                    <h1 class="static-text head-text" style="color:#000000">What We Really Are!</h1>        
+                    <h4 class="head-sub-text" style="color:#000000">"We craft smart, human-focused IT solutions to drive business success."</h4>
+                    <h1 class="typewriter-text head-text" style="color:#000000" id="typewriter"></h1>
                 </div>
                 {{-- <div class="breadcrumb-content">
                     <h2 style="width: 1100px; font-weight: 400; font-size: 2em">We craft smart, human-focused IT solutions to drive business success.</h2> --}}
@@ -499,21 +406,21 @@
     <div class="row align-items-center bg-white">
         <!-- Left Side Content -->
         <div class="col-md-8">
-            <h6 class="text-primary fw-semibold">About Core Tech Info</h6>
-            <h2 class="fw-bold">Introducing the Minds Behind IT Excellence</h2>
+            <h6 class="text-primary fw-semibold about-core">About Core Tech Info</h6>
+            <h2 class="fw-bold about-core-text">Introducing the Minds Behind IT Excellence</h2>
             <p class="text-muted">
                 We are more than just an IT company; we are your strategic technology partner, committed to empowering your business with innovative and advanced solutions. Driven by a passion for excellence and a dedication to continuous innovation, we strive to transform your operations and ensure you remain at the forefront of today’s rapidly evolving digital landscape..
             </p>
         </div>
 
         <!-- Right Side Image -->
-        <div class="col-md-4 position-relative">
+        {{-- <div class="col-md-4 position-relative">
             <img src="{{asset('images/'.env('CEO_IMAEG'))}}" alt="CEO" class="img-fluid rounded" width="400">
             <div class="ceo-badge">
                 <strong>Mr. {{env('CEO_NAME')}}</strong> <br>
                 <a href="#">CEO - {{env('COMPANY_NAME')}}</a>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>
 <!-- about end -->
@@ -522,7 +429,7 @@
 
 <!-- choosing reason begin -->
 <div class="container mb-3">
-    <div class="choosing-reason-about-page">
+    <div class="choosing-reason-about-page what-we-do">
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6">
                 <div class="single-reason">
@@ -577,10 +484,10 @@
         <div class="item"><img src="icons/flutter.png" alt="Flutter"></div>
       </div>
 </section> --}}
-<div class="about-details">
+<div class="about-details p-5">
     <div class="container">
         <!-- Section 1 -->
-       <div class="row justify-content-center align-items-center" style="margin-bottom: -5rem;">
+       <div class="row justify-content-center align-items-center">
             <div class="col-xl-6 col-lg-6 col-md-10">
                 <div class="part-text">
                     <h2 class="first-child">Making Resilience Simple</h2>
@@ -643,7 +550,7 @@
 </div> --}}
 <!-- about-details end -->
 
-<div class="container-fluid my-5">
+{{-- <div class="container-fluid my-5">
     <!-- Technologies Used Carousel -->
     <div class="section-title">
         <h2 class="text-center">Technologies We Use</h2>
@@ -700,16 +607,56 @@
           <div class="text-center">
               <img src="https://img.icons8.com/?size=100&id=71257&format=png&color=000000" class="tech-logo" alt="Angular"/>
               <p class="tech-name">Angular</p>
-          </div>              
+          </div>
+          <div class="text-center">
+              <img src="https://img.icons8.com/?size=100&id=20821&format=png&color=000000" class="tech-logo" alt="iOS"/>
+              <p class="tech-name">iOS</p>
+          </div> 
+          <div class="text-center">
+              <img src="https://img.icons8.com/?size=100&id=NfbyHexzVEDk&format=png&color=000000" class="tech-logo" alt="React"/>
+              <p class="tech-name">React</p>
+          </div> 
+          <div class="text-center">
+              <img src="https://img.icons8.com/?size=100&id=UGYn5TapNioV&format=png&color=000000" class="tech-logo" alt="PHP"/>
+              <p class="tech-name">PHP</p>
+          </div> 
+          <div class="text-center">
+              <img src="https://img.icons8.com/?size=100&id=5pu47piHKg1I&format=png&color=000000" class="tech-logo" alt="Flutter"/>
+              <p class="tech-name">Flutter</p>
+          </div> 
+          <div class="text-center">
+              <img src="https://img.icons8.com/?size=100&id=YYYhFVbH4vFv&format=png&color=000000" class="tech-logo" alt="React Native"/>
+              <p class="tech-name">React Native</p>
+          </div> 
+          <div class="text-center">
+              <img src="https://img.icons8.com/?size=100&id=XH8DlMsSOmWT&format=png&color=000000" class="tech-logo" alt="Swift"/>
+              <p class="tech-name">Swift</p>
+          </div>               
+          <div class="text-center">
+              <img src="https://img.icons8.com/?size=100&id=nKPTBtE1Kt27&format=png&color=000000" class="tech-logo" alt="Android Tv"/>
+              <p class="tech-name">Android Tv</p>
+          </div> 
+          <div class="text-center">
+              <img src="https://img.icons8.com/?size=100&id=13677&format=png&color=000000" class="tech-logo" alt="Photoshop"/>
+              <p class="tech-name">Photoshop</p>
+          </div> 
+          <div class="text-center">
+              <img src="https://img.icons8.com/?size=100&id=4M86yFQrNLMF&format=png&color=000000" class="tech-logo" alt="Cloud"/>
+              <p class="tech-name">Cloud</p>
+          </div> 
+          <div class="text-center">
+              <img src="https://img.icons8.com/?size=100&id=FHRVnLAgki9h&format=png&color=000000" class="tech-logo" alt="IT"/>
+              <p class="tech-name">IT</p>
+          </div> 
       </div>
-</div>
+</div> --}}
 
 
 
 <!-- support begin -->
 <!-- support end -->
 
-
+@include('includes.tech-animate')
 
 
 @endsection

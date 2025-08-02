@@ -1,10 +1,10 @@
-<div class="support support-3" style="padding: 20px 0">
+<div class="support support-3 mb-0" style="padding: 20px 0">
     <div class="container">
         <div class="row justify-content-between">
 
             <div class="col-xl-5 col-lg-5 d-xl-flex d-lg-flex d-block align-items-center">
                 <div class="part-text">
-                    <span class="phone-number">{{env('COMPANY_PHONE')}}</span>
+                    <span class="phone-number">{{env('COMPANY_PHONE_2')}}</span>
                     <p>We’re available 24/7!
                         Get in touch for a detailed analysis and thorough assessment of your plan.</p>
 
@@ -30,8 +30,8 @@
   document.getElementById('contact-now-btn').addEventListener('click', function (e) {
     e.preventDefault();
 
-    const phoneNumber = '918920078599'; // WhatsApp format: country code + number (no +, no spaces)
-    const telNumber = '+918920078599';  // tel: format with +
+    const phoneNumber = '919643044561'; // WhatsApp format: country code + number (no +, no spaces)
+    const telNumber = '+919643044561';  // tel: format with +
 
     const screenWidth = window.innerWidth;
 

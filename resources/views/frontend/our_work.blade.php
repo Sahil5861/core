@@ -239,12 +239,13 @@
       flex-wrap: wrap;    
       padding: 10px;
       margin-top: 200px;
+      margin-bottom: 100px;
       min-width:  40vw;
       min-height: 315px;
       /* background: rgba(0, 00, 0, 0.5) */
     }
     .typewriter-container h1{
-        font-size: 40px !important;
+        font-size: 40px;
     }
 
     .static-text {
@@ -300,6 +301,29 @@
       .banner-content2 h1{
         font-size: 24px !important;
       }
+      .typewriter-container {
+        min-height: 30vh !important;
+        margin-top: 10vh !important;
+        margin-bottom: 1vh !important;
+        max-width: 80vw !important;
+      }
+      .head-text {
+            font-size: 1.1rem !important;
+        }
+        .head-sub-text {
+            font-size: 1rem !important;
+        }
+        .head-head {
+            padding-left: 8px !important;
+        }
+        .project {
+            padding: 0px 0px !important;
+        }
+        .card-img-top {
+            padding-top: 10px;
+            
+        }
+
 
     }
      .bg-video{
@@ -320,6 +344,12 @@
         background-color: rgba(107, 95, 175, 0.5); /* #6B5FAF with 50% opacity */
         z-index: 1;
     }
+    .project {
+        padding: 0px 0px !important;
+    }
+    .section-title-2 span.subtitle {
+        margin-top: 45px;
+    }
  
 
 </style>
@@ -333,11 +363,11 @@
     <div class="video-overlay"></div>
     <div class="container">
        <div class="row">
-            <div class="col-xl-6 col-lg-6">
-                <div class="typewriter-container">
-                    <h4 style="color:#fff">Explore how our experience and dedication can future-proof your website.</h4>
-                    <h1 class="static-text"style="color:#fff">Our Work: Empowering Innovation, Driving Excellence</h1>        
-                    <h1 class="typewriter-text" style="color:#fff" id="typewriter"></h1>
+            <div class="col-xl-6 col-lg-6 head-head">
+                <div class="typewriter-container position-relative z-5">
+                    <h1 class="static-text head-text"style="color:#fff">Our Work: Empowering Innovation,<br> Driving Excellence</h1>        
+                    <h4 class="head-sub-text" style="color:#fff">Explore how our experience and dedication can future-proof your website.</h4>
+                    <h1 class="typewriter-text head-text" style="color:#fff" id="typewriter"></h1>
                 </div> 
                 {{-- <div class="breadcrumb-content">
                     <h2 style="width: 1100px; font-weight: 400; font-size: 2em">We craft smart, human-focused IT solutions to drive business success.</h2> --}}
@@ -481,14 +511,25 @@
     <div class="container-fluid this-container">
         <div class="part-project">
             <div class="row">
-                @foreach ($project as $item)                    
+                <style>
+                .card-img-top {
+                        width: auto;
+                        max-height: 200px;
+                        padding-top: 15px !important; /* Adjust padding to center the image */
+                        border-radius: 10px;
+                       
+                    }</style>
+                @foreach ($project->sortByDesc('id') as $item)                    
                     <div class="col-md-4 mb-4">  <!-- Adjust column size based on layout preference -->
-                        <div class="card project-card" style="min-height: 30.4rem;">
-                            <img src="{{asset('images/project/'.$item->image)}}" width="200" height="200" class="card-img-top" alt="...">
-                            <div class="card-body">
+                        <div class="card project-card" style="min-height: .4rem;">
+                                <div style="width: 100%; text-align: center;">
+                                    <img src="{{asset('images/project/'.$item->image)}}" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
                                 <h5 class="card-title">{{$item->title}}</h5>
                                 <p class="card-text">
-                                    {{ \Illuminate\Support\Str::words($item->description, 10, '...') }}
+                                    {!! \Illuminate\Support\Str::words($item->description, 15, '...') !!}
+                                    {{-- {{\Illuminate\Support\Str::limit($item->description, 100, '...')}} --}}
                                 </p>                            
                                 <a href="{{route('client-details',$item->id)}}" class="btn btn-primary">Details →</a>
                             </div>
@@ -563,50 +604,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
-                    <div class="single-reason">
-                        <div class="part-head">
-                            <span class="number">05</span>
-                        </div>
-                        <div class="part-body">
-                            <h3>Handing over the project to the customer</h3>
-                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
-                    <div class="single-reason">
-                        <div class="part-head">
-                            <span class="number">06</span>
-                        </div>
-                        <div class="part-body">
-                            <h3>Getting thier feedback</h3>
-                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
-                    <div class="single-reason">
-                        <div class="part-head">
-                            <span class="number">07</span>
-                        </div>
-                        <div class="part-body">
-                            <h3>Learning From Those feedbacks</h3>
-                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 aos-init" data-aos="new-animation" data-aos-delay="250" data-aos-duration="2000">
-                    <div class="single-reason">
-                        <div class="part-head">
-                            <span class="number">08</span>
-                        </div>
-                        <div class="part-body">
-                            <h3>Implementing those learnings to the next project</h3>
-                            {{-- <p>Collecting event old above shy bed favour income has stuff.</p>  --}}
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

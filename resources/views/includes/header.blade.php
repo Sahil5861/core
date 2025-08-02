@@ -48,16 +48,20 @@
                                     </li>                                   
 
                                     <li class="nav-item dropdown {{ request()->routeIs('services') ? 'active' : '' }}">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Service</a>
+                                        <a class="nav-link dropdown-toggle" href="{{ route('service-list') }}" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Service</a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown3" style="width: 300px;">
-                                            <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">Android App Development</a>
+                                            {{-- <a class="dropdown-item" href="{{route('services', )}}" style="width: 100%;">Android App Development</a>
                                             <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">Hybrid App Development</a>
                                             <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">Web Development</a>
                                             <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">TV App Development</a>
                                             <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">Cloud Solution Service</a>
                                             <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">iOS App Development</a>
                                             <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">UI/UX Design</a>
-                                            <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">DevOps Service</a>
+                                            <a class="dropdown-item" href="{{route('services')}}" style="width: 100%;">DevOps Service</a> --}}
+
+                                            @foreach ($services as $service)
+                                                <a class="dropdown-item" href="{{route('service.details', $service->slug)}}" style="width: 100%;">{{$service->title}}</a>                                        
+                                            @endforeach
                                         </div>                                        
                                     </li>
 
